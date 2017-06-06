@@ -27,6 +27,7 @@ export class TravelList {
 		  .subscribe((list: any)=> {
 		  	console.log(list);
 		  	this.travels = list;
+		  	//typescript cast
 		  });
 	}
 

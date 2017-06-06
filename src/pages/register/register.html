@@ -36,14 +36,16 @@
     <ion-input [(ngModel)]="registerAccount.password" type="password"></ion-input>
   </ion-item>
 
+  <ion-item>
+    <ion-label floating>Password Verify</ion-label>
+    <ion-input [(ngModel)]="passwordVerify" type="password"></ion-input>
+  </ion-item>
+
 <br/>
 
-<button ion-button block type="submit" (click)='loginUser()'>
-      Login
+<button ion-button block type="submit" (click)='registerUser()'>
+      Register
     </button>
-<button ion-button block clear (click)='register()'>
-    Create a new account
-  </button>
     </ion-list>
 
  

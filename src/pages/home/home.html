@@ -14,4 +14,35 @@
     Take a look at the <code>src/pages/</code> directory to add or change tabs,
     update any existing page or create new pages.
   </p>
+
+  <ion-list>
+
+  <ion-item>
+    <ion-label floating>Email</ion-label>
+    <ion-input [(ngModel)]="registerAccount.email" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input [(ngModel)]="registerAccount.password" type="password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input [(ngModel)]="registerAccount.password" type="password"></ion-input>
+  </ion-item>
+<br/>
+
+<button (click)='loginUser()' ion-button icon-right>
+  Connexion
+  <ion-icon name="log-in"></ion-icon>
+</button>
+
+<button (click)='signupUser()' ion-button icon-right>
+  register
+  <ion-icon name="log-in"></ion-icon>
+</button>
+    </ion-list>
+
+ 
 </ion-content>

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { User } from '../../models/user';
 import { TravelList } from '../travel-list/travel-list';
-import { TravelAdd } from '../travel-add/travel-add';
+import { Register } from '../register/register';
+import { EmailValidator } from '../../validators/email';
 
+import { AuthProvider } from '../../providers/auth-service/auth-service';
 
 /**
  * Generated class for the Connexion page.
@@ -11,7 +13,7 @@ import { TravelAdd } from '../travel-add/travel-add';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
+
 @Component({
   selector: 'page-connexion',
   templateUrl: 'connexion.html',
@@ -20,17 +22,21 @@ export class Connexion {
 
 	public registerAccount: User = new User('','','','');
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public _auth: AuthProvider) {
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Connexion');
+  loginUser(): void {
+    this._auth.loginUser(this.registerAccount.email,this.registerAccount.password)
+      .then(() => this.onSignInSuccess());
   }
 
-  verifyConnexion() {
+  register(): void {
+    this.navCtrl.push(Register);
+  }
 
-  	console.log(this.registerAccount);
-  	this.navCtrl.push(TravelAdd);
+  private onSignInSuccess(): void {
+    this.navCtrl.push(TravelList);
   }
 
 }

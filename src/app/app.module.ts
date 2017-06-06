@@ -10,6 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { Connexion } from '../pages/connexion/connexion';
 import { TravelList } from '../pages/travel-list/travel-list';
 import { TravelAdd } from '../pages/travel-add/travel-add';
+import { Register } from '../pages/register/register';
 import { DataService } from '../providers/data-service';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -17,7 +18,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 // Import the AF2 Module
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AuthProvider } from '../providers/auth-service/auth-service';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { TabsService } from '../providers/tabs-service/tabs-service';
+
 
  
 // AF2 Settings
@@ -41,6 +46,7 @@ export const firebaseConfig = {
     Connexion,
     TravelList,
     TravelAdd,
+    Register,
   ],
   imports: [
     BrowserModule,
@@ -58,12 +64,16 @@ export const firebaseConfig = {
     Connexion,
     TravelList,
     TravelAdd,
+    Register,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     DataService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AngularFireAuth,
+    AuthProvider,
+    TabsService,
   ]
 })
 export class AppModule {}
