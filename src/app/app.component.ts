@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Connexion } from '../pages/connexion/connexion';
 import { TabsPage } from '../pages/tabs/tabs';
+import { UserPage } from '../pages/user/user';
 import { TravelList } from '../pages/travel-list/travel-list';
 import { TabsService } from '../providers/tabs-service/tabs-service';
 
@@ -17,9 +18,9 @@ export class MyApp {
   constructor(public tabsService:TabsService,platform: Platform, afAuth: AngularFireAuth, statusBar: StatusBar, splashScreen: SplashScreen) {
 
     const authObserver = afAuth.authState.subscribe( user => {
-
       if (user) {
-        this.rootPage = TravelList;
+        tabsService.currentTab = TravelList;
+        this.rootPage = TabsPage;
         authObserver.unsubscribe();
       } else {
         this.rootPage = Connexion;

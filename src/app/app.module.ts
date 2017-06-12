@@ -11,6 +11,8 @@ import { Connexion } from '../pages/connexion/connexion';
 import { TravelList } from '../pages/travel-list/travel-list';
 import { TravelAdd } from '../pages/travel-add/travel-add';
 import { Register } from '../pages/register/register';
+import { UserPage } from '../pages/user/user';
+
 import { DataService } from '../providers/data-service';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -46,6 +48,7 @@ export const firebaseConfig = {
     Connexion,
     TravelList,
     TravelAdd,
+    UserPage,
     Register,
   ],
   imports: [
@@ -64,6 +67,7 @@ export const firebaseConfig = {
     Connexion,
     TravelList,
     TravelAdd,
+    UserPage,
     Register,
   ],
   providers: [

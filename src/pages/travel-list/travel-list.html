@@ -14,10 +14,19 @@
 
 
 <ion-content padding>
+
 	<ion-list>
 	  <ion-item *ngFor="let travel of travels">
-	    
-	    <h2>{{travel.startPlace}}</h2>
+		   <ion-thumbnail item-start item-left>
+	      <img src="img/thumbnail-totoro.png">
+	    </ion-thumbnail>
+	    <h2>{{travel.startPlace}} -> {{travel.endPlace}}</h2>
+	    <h3>Start hour : {{travel.hourStart}}</h3>
+	    <h3>Places : {{travel.nbPlace}}</h3>
+	    <p>I've had a pretty messed up day. If we just...</p>
 	  </ion-item>
 	</ion-list>
+	<ion-fab right bottom>
+    <button (click)="goToAddTravel()" color="danger" ion-fab><ion-icon  name="add" ></ion-icon></button>
+  </ion-fab>
 </ion-content>

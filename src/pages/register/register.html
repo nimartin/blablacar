@@ -24,29 +24,47 @@
     update any existing page or create new pages.
   </p>
 
-  <ion-list>
+  <form [formGroup]="signupForm" (submit)="registerUser()" novalidate>
 
-  <ion-item>
-    <ion-label floating>Email</ion-label>
-    <ion-input [(ngModel)]="registerAccount.email" type="text"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input formControlName="email" type="email" placeholder="Your email address" 
+        [class.invalid]="!signupForm.controls.email.valid && signupForm.controls.email.dirty">
+      </ion-input>
+    </ion-item>
+    <ion-item class="error-message" 
+      *ngIf="!signupForm.controls.email.valid  && signupForm.controls.email.dirty">
+      <p>Please enter a valid email.</p>
+    </ion-item>
 
-  <ion-item>
-    <ion-label floating>Password</ion-label>
-    <ion-input [(ngModel)]="registerAccount.password" type="password"></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label stacked>Password</ion-label>
+      <ion-input formControlName="password" type="password" placeholder="Your password" 
+        [class.invalid]="!signupForm.controls.password.valid && signupForm.controls.password.dirty">
+      </ion-input>
+    </ion-item>
+    <ion-item class="error-message" 
+      *ngIf="!signupForm.controls.password.valid  && signupForm.controls.password.dirty">
+      <p>Your password needs more than 6 characters.</p>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Password Verify</ion-label>
+      <ion-input formControlName="passwordVerify" type="password" placeholder="Your password verify" 
+        [class.invalid]="!signupForm.controls.passwordVerify.valid && signupForm.controls.passwordVerify.dirty ">
+      </ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label floating>Password Verify</ion-label>
-    <ion-input [(ngModel)]="passwordVerify" type="password"></ion-input>
-  </ion-item>
-
-<br/>
-
-<button ion-button block type="submit" (click)='registerUser()'>
-      Register
+    <ion-item class="error-message" 
+      *ngIf="!signupForm.controls.passwordVerify.valid  && signupForm.controls.passwordVerify.dirty">
+      <p>Your password needs more than 6 characters.</p>
+    </ion-item>
+    <ion-item class="error-message" 
+      *ngIf="signupForm.controls.passwordVerify.valid  && this.signupForm.value.password != this.signupForm.value.passwordVerify">
+      <p>Your passwords must be equals</p>
+    </ion-item>
+    <button ion-button block type="submit" [disabled]="!signupForm.valid || this.signupForm.value.password != this.signupForm.value.passwordVerify">
+      Create an Account
     </button>
-    </ion-list>
-
+  </form>
  
 </ion-content>

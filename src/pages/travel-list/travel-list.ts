@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Travel } from '../../models/travel';
+import { TravelAdd } from '../travel-add/travel-add';
+import {AngularFireDatabase} from 'angularfire2/database';
 
-
-import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 /**
  * Generated class for the TravelList page.
  *
@@ -31,7 +31,9 @@ export class TravelList {
 		  });
 	}
 
-
+	goToAddTravel(){
+		this.navCtrl.push(TravelAdd);
+	}
 	ionViewDidLoad() {
 		console.log("toto");
 

@@ -14,30 +14,57 @@
 
 
 <ion-content padding>
-<ion-list>
+  <ion-searchbar 
+    [(ngModel)]="autocomplete.query" 
+    [showCancelButton]="true" 
+    (ionInput)="updateSearch(autocomplete,'start')" 
+    (ionCancel)="dismiss()"
+    placeholder="Start place">
+  </ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of autocompleteItems" 
+    (click)="chooseStart(item)">
+    {{ item.description }}
+    </ion-item>
+  </ion-list>
 
-  <ion-item>
-    <ion-label floating>Lieu de départ</ion-label>
-    <ion-input [(ngModel)]="newTravel.startPlace" type="text"></ion-input>
-  </ion-item>
+  <ion-searchbar 
+    [(ngModel)]="autocompleteEnd.query" 
+    [showCancelButton]="true" 
+    (ionInput)="updateSearch(autocompleteEnd,'end')" 
+    (ionCancel)="dismiss()"
+    placeholder="End place">
+  </ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of autocompleteItemsEnd" 
+    (click)="chooseEnd(item)">
+    {{ item.description }}
+    </ion-item>
+  </ion-list>
 
-  <ion-item>
-    <ion-label floating>Lieu d'arrivée</ion-label>
-    <ion-input [(ngModel)]="newTravel.endPlace" type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label floating>Heure de départ</ion-label>
-    <ion-input [(ngModel)]="newTravel.hourStart" type="text"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label floating>Nombre de places</ion-label>
-    <ion-input [(ngModel)]="newTravel.nbPlace" type="text"></ion-input>
-  </ion-item>
-<br/>
-  <button (click)='addTravel()' ion-button icon-right>
-  Add Travel
-  <ion-icon name="car"></ion-icon>
-</button>
+  <ion-list>
+    <ion-item *ngIf="newTravel.duration != ''">
+      <ion-label floating>Duration</ion-label>
+      <ion-input [(ngModel)]="newTravel.duration" disabled type="text"></ion-input>
+      <span >{{newTravel.duration}}</span>
+    </ion-item>
 
-</ion-list>
+    <ion-item>
+        <ion-label floating>Start Time</ion-label>
+        <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="newTravel.hourStart"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Nombre de places</ion-label>
+      <ion-input [(ngModel)]="newTravel.nbPlace" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button (click)='addTravel()' block ion-button icon-right 
+          [disabled]="newTravel.startPlace == '' && newTravel.endPlace == '' 
+          && newTravel.nbPlace ==null && newTravel.hourStart ==''  ">
+    Add Travel
+    <ion-icon name="car"></ion-icon>
+  </button>
+
 </ion-content>
