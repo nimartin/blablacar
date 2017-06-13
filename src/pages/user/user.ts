@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth-service/auth-service';
 import { User } from '../../models/user';
@@ -16,7 +16,7 @@ import firebase from 'firebase/app';
   selector: 'page-user',
   templateUrl: 'user.html',
 })
-export class UserPage {
+export class UserPage implements OnInit{
 
 	private user : User;
 	private userProfile : any;
@@ -26,6 +26,11 @@ export class UserPage {
   	// console.log(this.user);
 
   }
+
+	ngOnInit() {
+		this.user = this.authProvider.currentUserInfo(); 
+  	console.log(this.user);
+	}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserPage');
