@@ -3,9 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Travel } from '../../models/travel';
 import { TravelList } from '../travel-list/travel-list';
 import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
+import { GoogleMap, GoogleMapsEvent, GoogleMapsLatLng } from 'ionic-native';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {googlemaps} from 'googlemaps';
 
 /**
  * Generated class for the TravelAdd page.
@@ -29,6 +29,7 @@ export class TravelAdd implements OnInit{
 	placesService: any;
 	directionsService : any;
 	duration : any;
+
 
   	public travelForm: FormGroup;
 

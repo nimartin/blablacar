@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AuthProvider } from '../../providers/auth-service/auth-service';
+import { User } from '../../models/user';
+
+import firebase from 'firebase/app';
 
 /**
  * Generated class for the UserPage page.
@@ -14,11 +18,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class UserPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+	private user : User;
+	private userProfile : any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public authProvider: AuthProvider) {
+  	console.log(authProvider.currentUser);
+  	// this.user = this.authProvider.currentUserInfo(); 
+  	// console.log(this.user);
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserPage');
   }
+
+
 
 }

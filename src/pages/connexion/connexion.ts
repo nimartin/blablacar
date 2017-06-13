@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { User } from '../../models/user';
 import { TravelList } from '../travel-list/travel-list';
+import { TabsPage } from '../tabs/tabs';
+import { TabsService } from '../../providers/tabs-service/tabs-service';
 import { Register } from '../register/register';
 import {
   IonicPage, 
@@ -29,7 +31,7 @@ export class Connexion {
 	public registerAccount: User = new User('','','','');
   public loginForm:FormGroup;
   public loading:Loading;
-  constructor(public navCtrl: NavController, public authProvider: AuthProvider,
+  constructor(public tabsService:TabsService,public navCtrl: NavController, public authProvider: AuthProvider,
     public loadingCtrl: LoadingController, public alertCtrl: AlertController , public formBuilder: FormBuilder) {
 
     this.loginForm = formBuilder.group({
@@ -48,7 +50,8 @@ export class Connexion {
           this.loginForm.value.password)
       .then( authData => {
         this.loading.dismiss().then( () => {
-          this.navCtrl.setRoot(TravelList);
+          this.tabsService.currentTab = TravelList;
+          this.navCtrl.setRoot(TabsPage);
         });
       }, error => {
         this.loading.dismiss().then( () => {
@@ -74,7 +77,9 @@ export class Connexion {
   }
 
   private onSignInSuccess(): void {
-    this.navCtrl.push(TravelList);
+    console.log("wallah");
+    this.tabsService.currentTab = TravelList;
+    this.navCtrl.push(TabsPage);
   }
 
 }
