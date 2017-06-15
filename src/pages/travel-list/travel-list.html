@@ -8,13 +8,17 @@
 
 	<ion-navbar>
 		<ion-title>travelList</ion-title>
+		<ion-buttons end> 
+			<button (click)="logOut()" clear end  ion-button icon-only>
+			  <ion-icon name="log-out"></ion-icon>
+			</button>
+		</ion-buttons>
 	</ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
 	<ion-list>
 	  <ion-item *ngFor="let travel of travels">
 		   <ion-thumbnail item-start item-left>

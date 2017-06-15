@@ -6,7 +6,7 @@ import firebase from 'firebase/app';
 @Injectable()
 export class AuthProvider {
   public currentUser: firebase.User;
-  private userProfile : any;
+  private userProfile : User;
   public user_uid : any;
 
   constructor(public afAuth: AngularFireAuth) {
@@ -39,12 +39,13 @@ export class AuthProvider {
     return this.currentUser !== null;
   }
 
-  currentUserInfo() : User {
-    console.log(this.currentUser);
-    this.user_uid = this.currentUser.uid;
-    this.userProfile = firebase.database().ref('/usersProfile').child(this.user_uid);
-    return new User(this.userProfile.email,this.userProfile.name,this.userProfile.lastName,this.userProfile.image);
-    
+  currentUserInfo(){
+    /*firebase.database().ref('/usersProfile').child(this.currentUser.uid).on('value', data => {
+      this.userProfile = new User(data.val().name,data.val().lastname,data.val().email,data.val().image);
+      console.log(this.userProfile);
+    });*/
+    return firebase.database().ref('/usersProfile').child(this.currentUser.uid);
+
   }
 
 

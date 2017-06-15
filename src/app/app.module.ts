@@ -22,6 +22,8 @@ import { AuthProvider } from '../providers/auth-service/auth-service';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { TabsService } from '../providers/tabs-service/tabs-service';
 
+import { UserEditPage } from '../pages/user-edit/user-edit';
+
 
  
 // AF2 Settings
@@ -43,6 +45,7 @@ export const firebaseConfig = {
     TravelList,
     TravelAdd,
     UserPage,
+    UserEditPage,
     Register,
   ],
   imports: [
@@ -59,6 +62,7 @@ export const firebaseConfig = {
     TravelList,
     TravelAdd,
     UserPage,
+    UserEditPage,
     Register,
   ],
   providers: [

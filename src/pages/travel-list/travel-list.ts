@@ -4,6 +4,13 @@ import { Travel } from '../../models/travel';
 import { TravelAdd } from '../travel-add/travel-add';
 import {AngularFireDatabase} from 'angularfire2/database';
 
+import { Connexion } from '../connexion/connexion';
+import { AuthProvider } from '../../providers/auth-service/auth-service';
+
+import {
+  Loading,
+  LoadingController, 
+  AlertController } from 'ionic-angular';
 /**
  * Generated class for the TravelList page.
  *
@@ -19,8 +26,10 @@ import {AngularFireDatabase} from 'angularfire2/database';
 export class TravelList {
 
 	public travels: Array<Travel>; //FirebaseListObservable<any>;
+ 	public loading:Loading;
 
-	constructor(public db:AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams) {
+	constructor(public db:AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams, public authProvider: AuthProvider,
+		 public loadingCtrl: LoadingController, public alertCtrl: AlertController) {
 		this.travels = [];
 
 		db.list('/travels')
@@ -37,6 +46,30 @@ export class TravelList {
 	ionViewDidLoad() {
 		console.log("toto");
 
+	}
+
+	logOut(){
+		this.authProvider.logoutUser().then( authData => {
+        this.loading.dismiss().then( () => {
+          this.navCtrl.setRoot(Connexion);
+        });
+      }, error => {
+        this.loading.dismiss().then( () => {
+          let alert = this.alertCtrl.create({
+            message: error.message,
+            buttons: [
+              {
+                text: "Ok",
+                role: 'cancel'
+              }
+            ]
+          });
+          alert.present();
+        });
+      });
+
+      this.loading = this.loadingCtrl.create();
+      this.loading.present();
 	}
 
 }

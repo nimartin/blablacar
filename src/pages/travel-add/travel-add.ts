@@ -4,9 +4,10 @@ import { Travel } from '../../models/travel';
 import { TravelList } from '../travel-list/travel-list';
 import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 import { GoogleMap, GoogleMapsEvent, GoogleMapsLatLng } from 'ionic-native';
+import {googlemaps} from 'googlemaps'
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+//declare var google : any;
 /**
  * Generated class for the TravelAdd page.
  *
