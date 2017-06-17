@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ionic-hello-world documentation</title>
+        <title>blablacar documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,7 +13,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ionic-hello-world documentation</a>
+            <a href="../" class="navbar-brand">blablacar documentation</a>
             <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
@@ -26,7 +26,7 @@
                 <ul class="list">
             
                     <li class="title">
-                        <a href="../index.html">ionic-hello-world documentation</a>
+                        <a href="../index.html">blablacar documentation</a>
                     </li>
             
                     <li class="divider"></li>
@@ -155,12 +155,6 @@
                                 <li class="link">
                                     <a href="../injectables/AuthProvider.html" >AuthProvider</a>
                                 </li>
-                                <li class="link">
-                                    <a href="../injectables/DataService.html" >DataService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/TabsService.html" >TabsService</a>
-                                </li>
                         </ul>
                     </li>
             
@@ -195,7 +189,7 @@
                        <ul class="list">
                    
                            <li class="title">
-                               <a href="../index.html">ionic-hello-world documentation</a>
+                               <a href="../index.html">blablacar documentation</a>
                            </li>
                    
                            <li class="divider"></li>
@@ -327,12 +321,6 @@
                                        <li class="link">
                                            <a href="../injectables/AuthProvider.html" >AuthProvider</a>
                                        </li>
-                                       <li class="link">
-                                           <a href="../injectables/DataService.html" >DataService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/TabsService.html" >TabsService</a>
-                                       </li>
                                </ul>
                            </li>
                    
@@ -434,15 +422,20 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(tabsService: <a href="../injectables/TabsService.html">TabsService</a>)</code>
+                            <code>constructor(navCtrl: NavController, params: NavParams)</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/pages/tabs/tabs.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/pages/tabs/tabs.ts:31</a></div>
                             </td>
                         </tr>
     
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Change active tab if &quot;index&quot; is defined on NavParams</p><br/></div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
     </section>
@@ -457,33 +450,78 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> root</b>
+                            <b><span class="modifier">Static</span> activeTab</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <code>root:     <code>any</code>
+                            <span class="modifier-icon fa fa-export"></span><code>activeTab:     <code>any</code>
     </bcode>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/pages/tabs/tabs.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/pages/tabs/tabs.ts:26</a></div>
                             </td>
                         </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>define active tab </p><br/></div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <table class="table table-sm table-bordered">
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> tabsService</b>
+                            <b> navCtrl</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <code>tabsService:     <code><a href="../injectables/TabsService.html" target="_self" >TabsService</a></code>
+                            <code>navCtrl:     <code>NavController</code>
     </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> params</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>params:     <code>NavParams</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Static</span> root</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-export"></span><code>root:     <code>any</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/pages/tabs/tabs.ts:31</a></div>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>the root page</p><br/></div>
                         </td>
                     </tr>
                 </tbody>
@@ -508,9 +546,14 @@
                         </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/pages/tabs/tabs.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/pages/tabs/tabs.ts:16</a></div>
                             </td>
                         </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Page on click on the car icon</p><br/></div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <table class="table table-sm table-bordered">
@@ -533,9 +576,14 @@
                         </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/pages/tabs/tabs.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/pages/tabs/tabs.ts:21</a></div>
                             </td>
                         </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Page on click on the user icon</p><br/></div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
     </section>
@@ -549,28 +597,48 @@ import { Connexion } from &#x27;../connexion/connexion&#x27;;
 import { TravelList } from &#x27;../travel-list/travel-list&#x27;;
 import { TravelAdd } from &#x27;../travel-add/travel-add&#x27;;
 import { UserPage } from &#x27;../user/user&#x27;;
-import { TabsService } from &#x27;../../providers/tabs-service/tabs-service&#x27;;
+import { NavController, NavParams} from &#x27;ionic-angular&#x27;;
 
 @Component({
   templateUrl: &#x27;tabs.html&#x27;
 })
 export class TabsPage {
+	/**
+	* Page on click on the car icon
+	*/
   tabTravels &#x3D; TravelList;
+
+  /**
+	* Page on click on the user icon
+	*/
   tabUser &#x3D; UserPage;
 
-  root: any &#x3D; {};
+  /**
+	* define active tab 
+	*/
+  public activeTab: any;
 
-  constructor(public tabsService : TabsService) {
-  	this.root &#x3D; tabsService.currentTab;
+  /**
+	* the root page
+	*/
+  public root : any;
+  
+	/**
+	* Change active tab if &quot;index&quot; is defined on NavParams
+	*/
+  constructor(public navCtrl: NavController, public params: NavParams) {
+  	this.activeTab &#x3D; params.get(&quot;index&quot;)?params.get(&quot;index&quot;):0;
   }
+
+
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade" id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ion-tabs&gt;
-  &lt;ion-tab [root]&#x3D;&quot;tabTravels&quot; tabTitle&#x3D;&quot;Travels&quot; tabIcon&#x3D;&quot;car&quot;&gt;&lt;/ion-tab&gt;
-  &lt;ion-tab [root]&#x3D;&quot;tabUser&quot; tabTitle&#x3D;&quot;User&quot; tabIcon&#x3D;&quot;contacts&quot;&gt;&lt;/ion-tab&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;ion-tabs selectedIndex&#x3D;&quot;{{activeTab}}&quot;&gt;
+  &lt;ion-tab [(root)]&#x3D;&quot;tabTravels&quot; tabTitle&#x3D;&quot;Travels&quot; tabIcon&#x3D;&quot;car&quot;&gt;&lt;/ion-tab&gt;
+  &lt;ion-tab [(root)]&#x3D;&quot;tabUser&quot; tabTitle&#x3D;&quot;User&quot; tabIcon&#x3D;&quot;contacts&quot;&gt;&lt;/ion-tab&gt;
 &lt;/ion-tabs&gt;
 </code></pre>
     </div>
@@ -598,7 +666,7 @@ export class TabsPage {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ion-tabs>  <ion-tab [root]="tabTravels" tabTitle="Travels" tabIcon="car"></ion-tab>  <ion-tab [root]="tabUser" tabTitle="User" tabIcon="contacts"></ion-tab></ion-tabs></div>'
+        var COMPONENT_TEMPLATE = '<div><ion-tabs selectedIndex="{{activeTab}}">  <ion-tab [(root)]="tabTravels" tabTitle="Travels" tabIcon="car"></ion-tab>  <ion-tab [(root)]="tabUser" tabTitle="User" tabIcon="contacts"></ion-tab></ion-tabs></div>'
     var COMPONENTS = [{'name': 'Connexion', 'selector': 'page-connexion'},{'name': 'MyApp', 'selector': ''},{'name': 'Register', 'selector': 'page-register'},{'name': 'TabsPage', 'selector': ''},{'name': 'TravelAdd', 'selector': 'page-travel-add'},{'name': 'TravelList', 'selector': 'page-travel-list'},{'name': 'UserEditPage', 'selector': 'page-user-edit'},{'name': 'UserPage', 'selector': 'page-user'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TabsPage'};

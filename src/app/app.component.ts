@@ -5,15 +5,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Connexion } from '../pages/connexion/connexion';
 import { TabsPage } from '../pages/tabs/tabs';
-import { UserPage } from '../pages/user/user';
-import { TravelList } from '../pages/travel-list/travel-list';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
+  /**
+   * rootPage of the app
+   */
   rootPage:any;
-  allTabs: TabsPage;
+
+  /**
+   *  Define the rootPage if there is an user connected or no
+   */
   constructor(platform: Platform, afAuth: AngularFireAuth, statusBar: StatusBar, splashScreen: SplashScreen) {
 
     const authObserver = afAuth.authState.subscribe( user => {

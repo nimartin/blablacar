@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from '../../models/user';
-import { TravelList } from '../travel-list/travel-list';
-import { UserPage } from '../user/user';
 import { TabsPage } from '../tabs/tabs';
-import { TabsService } from '../../providers/tabs-service/tabs-service';
 import { Register } from '../register/register';
 import {
   IonicPage, 
@@ -29,9 +26,23 @@ import { AuthProvider } from '../../providers/auth-service/auth-service';
 })
 export class Connexion {
 
+   /**
+   * use to connect a new User
+   */
 	public registerAccount: User = new User('','','','');
+  /**
+   * FormGroup for the connexion of the user
+   */
   public loginForm:FormGroup;
+
+  /**
+   * Open when the user submit the form
+   */
   public loading:Loading;
+
+  /**
+   * Instanciate the form and its validators
+   */
   constructor(public navCtrl: NavController, public authProvider: AuthProvider,
     public loadingCtrl: LoadingController, public alertCtrl: AlertController , public formBuilder: FormBuilder) {
 
@@ -43,6 +54,9 @@ export class Connexion {
     });
 
   }
+  /**
+   * Log the user using a call of authProvider an its method loginUser
+   */
   loginUser(): void {
     if (!this.loginForm.valid){
       console.log(this.loginForm.value);
@@ -71,7 +85,9 @@ export class Connexion {
       this.loading.present();
     }
   }
-
+  /**
+   * Go to sign up page
+   */
   goToSignUp(): void {
     this.navCtrl.push(Register);
   }

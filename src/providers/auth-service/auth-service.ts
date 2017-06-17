@@ -5,10 +5,19 @@ import firebase from 'firebase/app';
 
 @Injectable()
 export class AuthProvider {
+  /**
+   * current firebase user
+   */
   public currentUser: firebase.User;
-  private userProfile : User;
-  public user_uid : any;
 
+  /**
+   * userProfile of current User
+   */ 
+  private userProfile : User;
+
+  /**
+   * set currentUser 
+   */ 
   constructor(public afAuth: AngularFireAuth) {
   	afAuth.authState.subscribe((user) => 
       this.currentUser = user);
@@ -16,8 +25,6 @@ export class AuthProvider {
   }
 
   /**
-   * @params {string} newEmail
-   * @params {string} newPassword
    * User connexion using firebase auth
    */
   loginUser(newEmail: string, newPassword: string): firebase.Promise<any> {
@@ -32,8 +39,6 @@ export class AuthProvider {
   }
 
   /**
-   * @params {string} newEmail
-   * @params {string} newPassword
    * User signup using firebase auth
    */
   signupUser(newEmail: string, newPassword: string): firebase.Promise<any> {
@@ -60,7 +65,6 @@ export class AuthProvider {
   }
 
   /**
-   * @params {string} name
    * update the user name on usersProfile from firebase
    */
   updateName(name: string){
@@ -70,7 +74,6 @@ export class AuthProvider {
   }
 
   /**
-   * @params {string} lastName
    * update the user lastName on usersProfile from firebase
    */
   updateLastName(lastName: string){
@@ -80,7 +83,6 @@ export class AuthProvider {
   }
 
   /**
-   * @params {string} image
    * update the user image on usersProfile from firebase
    */
   updateImage(image: string){

@@ -10,10 +10,29 @@ import { NavController, NavParams} from 'ionic-angular';
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
+	/**
+	* Page on click on the car icon
+	*/
   tabTravels = TravelList;
+
+  /**
+	* Page on click on the user icon
+	*/
   tabUser = UserPage;
+
+  /**
+	* define active tab 
+	*/
   public activeTab: any;
+
+  /**
+	* the root page
+	*/
   public root : any;
+  
+	/**
+	* Change active tab if "index" is defined on NavParams
+	*/
   constructor(public navCtrl: NavController, public params: NavParams) {
   	this.activeTab = params.get("index")?params.get("index"):0;
   }

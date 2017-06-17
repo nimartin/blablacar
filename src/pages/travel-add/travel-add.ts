@@ -6,7 +6,6 @@ import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database
 import { GoogleMap, GoogleMapsEvent, GoogleMapsLatLng } from 'ionic-native';
 import {googlemaps} from 'googlemaps'
 
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 //declare var google : any;
 /**
  * Generated class for the TravelAdd page.
@@ -20,22 +19,50 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
  	templateUrl: 'travel-add.html',
  })
  export class TravelAdd implements OnInit{
+ 	/**
+	* travels from firebase
+	*/
  	travels :FirebaseListObservable<Travel[]>;
+
+ 	/**
+	* newTravel to add
+	*/
  	public newTravel: Travel = new Travel('','','',null,'');
+
+ 	/**
+	* Items to autocomplete startPlace searchBar
+	*/
  	autocompleteItems: any;
+
+ 	/**
+	* Items to autocomplete endPlace searchBar
+	*/
  	autocompleteItemsEnd: any;
+
+ 	/**
+	* autocomplete for startPlace searchBar
+	*/
  	autocomplete: any;
+
+ 	/**
+	* autocomplete for endPlace searchBar
+	*/
  	autocompleteEnd: any;
+
+ 	/**
+	* goople maps / places AutoCompleteService
+	*/
  	acService:any;
- 	placesService: any;
+
+ 	/**
+	* Use to calculate the best routes / durations between to place
+	*/
  	directionsService : any;
- 	duration : any;
 
-
- 	public travelForm: FormGroup;
-
- 	constructor(public db:AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams
- 		,public formBuilder: FormBuilder) {
+ 	/**
+	* Instanciate the firebase travels
+	*/
+ 	constructor(public db:AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams) {
  		this.travels = db.list('/travels');
  	}
 
@@ -55,8 +82,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 	 }
 
 	/**
-	 * @params {any} autocomplete
-	 * @params {string} type
 	 * Called to get the place predictions when user is typing
 	 */
 	 updateSearch(autocomplete,type) {
@@ -93,7 +118,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 	}
 
 	/**
-	 * @params {any} item
 	 * Call to get the prediction on start place
 	 */
 	chooseStart(item){
@@ -105,7 +129,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 	}
 
 	/**
-	 * @params {any} item
 	 * Call to get the prediction on end place
 	 */
 	chooseEnd(item){
@@ -138,7 +161,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 	 * Get the better route and its duration
 	 */
 	getDuration(route){
-		console.log(route);
 		var finalRoute = route.legs[0];
 		for(var r in route.legs){
 			if (route.legs[r].duration.value <  finalRoute.duration.value){
@@ -146,7 +168,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 			}
 		}
 		this.newTravel.duration = finalRoute.duration.text;
-		console.log(this.newTravel.duration);
 	}
 
 	/**
@@ -157,7 +178,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 			startPlace 	: this.newTravel.startPlace,
 			endPlace	: this.newTravel.endPlace,
 			hourStart		: this.newTravel.hourStart,
-			nbPlace	: this.newTravel.nbPlace
+			nbPlace	: this.newTravel.nbPlace,
+			duration : this.newTravel.duration
 		});
 		this.navCtrl.push(TravelList);
 	}

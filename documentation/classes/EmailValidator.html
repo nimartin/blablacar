@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ionic-hello-world documentation</title>
+        <title>blablacar documentation</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,7 +13,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">ionic-hello-world documentation</a>
+            <a href="../" class="navbar-brand">blablacar documentation</a>
             <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
@@ -26,7 +26,7 @@
                 <ul class="list">
             
                     <li class="title">
-                        <a href="../index.html">ionic-hello-world documentation</a>
+                        <a href="../index.html">blablacar documentation</a>
                     </li>
             
                     <li class="divider"></li>
@@ -155,12 +155,6 @@
                                 <li class="link">
                                     <a href="../injectables/AuthProvider.html" >AuthProvider</a>
                                 </li>
-                                <li class="link">
-                                    <a href="../injectables/DataService.html" >DataService</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../injectables/TabsService.html" >TabsService</a>
-                                </li>
                         </ul>
                     </li>
             
@@ -195,7 +189,7 @@
                        <ul class="list">
                    
                            <li class="title">
-                               <a href="../index.html">ionic-hello-world documentation</a>
+                               <a href="../index.html">blablacar documentation</a>
                            </li>
                    
                            <li class="divider"></li>
@@ -327,12 +321,6 @@
                                        <li class="link">
                                            <a href="../injectables/AuthProvider.html" >AuthProvider</a>
                                        </li>
-                                       <li class="link">
-                                           <a href="../injectables/DataService.html" >DataService</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../injectables/TabsService.html" >TabsService</a>
-                                       </li>
                                </ul>
                            </li>
                    
@@ -417,12 +405,13 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/validators/email.ts:5</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/validators/email.ts:7</a></div>
                                     </td>
                                 </tr>
             
                             <tr>
                                 <td class="col-md-4">
+                                        <div class="io-description"><p>return null is email is valid, else return invalidEmail</p><br/></div>
             
                                         <div class="io-description">
                                             <b>Returns : </b>    <code>void</code>
@@ -440,9 +429,11 @@
         <pre class="line-numbers"><code class="language-typescript">import { FormControl } from &#x27;@angular/forms&#x27;;
 
 export class EmailValidator {
-
+	/**
+   * return null is email is valid, else return invalidEmail
+   */ 
   static isValid(control: FormControl){
-    const re &#x3D; /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(control.value);
+    const re &#x3D; /^(?:[a-z0-9!#$%&amp;&#x27;*+/&#x3D;?^_&#x60;{|}~-]+(?:\.[a-z0-9!#$%&amp;&#x27;*+/&#x3D;?^_&#x60;{|}~-]+)*|&quot;(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*&quot;)@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/.test(control.value);
 
     if (re){ return null; }
     return { &quot;invalidEmail&quot;: true };

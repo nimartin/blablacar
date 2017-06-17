@@ -23,14 +23,19 @@ import {
  	templateUrl: 'user.html',
  })
  export class UserPage implements OnInit{
-
+ 	
+ 	/**
+	 * current userProfile Info
+	 */
  	private user : User;
- 	private userProfile : any;
+
+ 	/**
+	 * use on logOut()
+	 */
  	public loading:Loading;
+
  	constructor(public navCtrl: NavController, public navParams: NavParams,public authProvider: AuthProvider,
  		public loadingCtrl: LoadingController, public alertCtrl: AlertController) {
-  	// this.user = this.authProvider.currentUserInfo(); 
-  	// console.log(this.user);
   	this.user = new User('','','','');
   }
 
@@ -40,7 +45,6 @@ import {
   ngOnInit() {
   	this.authProvider.currentUserInfo().on('value', data => {
   		this.user = new User(data.val().name,data.val().lastName,data.val().email,data.val().image);
-  		console.log(this.user);
   	});
   }
 

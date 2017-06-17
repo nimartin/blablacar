@@ -10,7 +10,6 @@ import { TravelAdd } from '../pages/travel-add/travel-add';
 import { Register } from '../pages/register/register';
 import { UserPage } from '../pages/user/user';
 
-import { DataService } from '../providers/data-service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -67,7 +66,6 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
-    DataService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AngularFireAuth,
     AuthProvider,

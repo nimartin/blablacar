@@ -10,7 +10,6 @@ import { EmailValidator } from '../../validators/email';
 import { AuthProvider } from '../../providers/auth-service/auth-service';
 import { UserEditPage } from '../user-edit/user-edit';
 import { UserPage } from '../user/user';
-import { TabsPage } from '../tabs/tabs';
 import { User } from '../../models/user';
 
 /**
@@ -25,10 +24,24 @@ import { User } from '../../models/user';
 })
 export class Register {
 
-
+  /**
+   * use to verify the 2 passwords input
+   */
   public passwordVerify : any;
+
+  /**
+   * FormGroup for the connexion of the user
+   */
   public signupForm: FormGroup;
+
+  /**
+   * Open when the user submit the form
+   */
   loading: Loading;
+
+   /**
+   * Instanciate the form and its validators
+   */
   constructor(public navCtrl: NavController, public authProvider: AuthProvider,
     public formBuilder: FormBuilder, public loadingCtrl: LoadingController, 
     public alertCtrl: AlertController) {
@@ -40,6 +53,10 @@ export class Register {
       });
     }
 
+
+    /**
+     * Sign up the user using a call of authProvider an its method signupUser
+     */
     registerUser(){
       if (!this.signupForm.valid){
         console.log(this.signupForm.value);

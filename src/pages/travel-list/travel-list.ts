@@ -25,16 +25,25 @@ import {
 
  export class TravelList {
 
+ 	/**
+	 * Firebase Observable List of travels
+	 */
 	public travels: Array<Travel>; //FirebaseListObservable<any>;
-	public loading:Loading;
 
+	/**
+	* Use on logOut()
+	*/
+	loading:Loading;
+
+	/**
+	* Fetch all the list of travels
+	*/
 	constructor(public db:AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams, public authProvider: AuthProvider,
 		public loadingCtrl: LoadingController, public alertCtrl: AlertController) {
 		this.travels = [];
 
 		db.list('/travels')
 		.subscribe((list: any)=> {
-			console.log(list);
 			this.travels = list;
 		});
 	}
@@ -44,10 +53,6 @@ import {
 	 */
 	 goToAddTravel(){
 	 	this.navCtrl.push(TravelAdd);
-	 }
-	 ionViewDidLoad() {
-	 	console.log("toto");
-
 	 }
 
 	 /**
