@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { User } from '../../models/user';
 import { TravelList } from '../travel-list/travel-list';
 import { IonicPage, 
   NavController, 
@@ -9,6 +8,10 @@ import { IonicPage,
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmailValidator } from '../../validators/email';
 import { AuthProvider } from '../../providers/auth-service/auth-service';
+import { UserEditPage } from '../user-edit/user-edit';
+import { UserPage } from '../user/user';
+import { TabsPage } from '../tabs/tabs';
+import { User } from '../../models/user';
 
 /**
  * Generated class for the Register page.
@@ -22,10 +25,8 @@ import { AuthProvider } from '../../providers/auth-service/auth-service';
 })
 export class Register {
 
-  public registerAccount: User = new User('','','','');
 
   public passwordVerify : any;
-
   public signupForm: FormGroup;
   loading: Loading;
   constructor(public navCtrl: NavController, public authProvider: AuthProvider,
@@ -38,6 +39,7 @@ export class Register {
         passwordVerify: ['', Validators.compose([Validators.minLength(6), Validators.required])]
       });
     }
+
     registerUser(){
       if (!this.signupForm.valid){
         console.log(this.signupForm.value);
@@ -46,7 +48,9 @@ export class Register {
             this.signupForm.value.password)
         .then(() => {
           this.loading.dismiss().then( () => {
-            this.navCtrl.setRoot(TravelList);
+            this.navCtrl.push(UserEditPage, {
+              user: new User('','',this.signupForm.value.email,'') 
+            });
           });
         }, (error) => {
           this.loading.dismiss().then( () => {
@@ -66,17 +70,5 @@ export class Register {
         this.loading.present();
       }
     }
-
-  /*registerUser(): void {
-  	if(this.registerAccount.password == this.passwordVerify){
-  		this._auth.signupUser(this.registerAccount.email,this.registerAccount.password)
-      .then(() => this.onSignUpSuccess());
-  	}
-    
-  }*/
-
-  private onSignUpSuccess(): void {
-    this.navCtrl.push(TravelList);
-  }
 
 }

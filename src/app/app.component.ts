@@ -7,7 +7,6 @@ import { Connexion } from '../pages/connexion/connexion';
 import { TabsPage } from '../pages/tabs/tabs';
 import { UserPage } from '../pages/user/user';
 import { TravelList } from '../pages/travel-list/travel-list';
-import { TabsService } from '../providers/tabs-service/tabs-service';
 
 @Component({
   templateUrl: 'app.html'
@@ -15,11 +14,10 @@ import { TabsService } from '../providers/tabs-service/tabs-service';
 export class MyApp {
   rootPage:any;
   allTabs: TabsPage;
-  constructor(public tabsService:TabsService,platform: Platform, afAuth: AngularFireAuth, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, afAuth: AngularFireAuth, statusBar: StatusBar, splashScreen: SplashScreen) {
 
     const authObserver = afAuth.authState.subscribe( user => {
       if (user) {
-        tabsService.currentTab = TravelList;
         this.rootPage = TabsPage;
         authObserver.unsubscribe();
       } else {

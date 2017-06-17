@@ -15,18 +15,27 @@ export class AuthProvider {
 
   }
 
+  /**
+   * @params {string} newEmail
+   * @params {string} newPassword
+   * User connexion using firebase auth
+   */
   loginUser(newEmail: string, newPassword: string): firebase.Promise<any> {
     return this.afAuth.auth.signInWithEmailAndPassword(newEmail, newPassword);
   }
 
-  resetPassword(email: string): firebase.Promise<any> {
-    return this.afAuth.auth.sendPasswordResetEmail(email);
-  }
-
+  /**
+   * User logout using firebase auth
+   */
   logoutUser(): firebase.Promise<any> {
     return this.afAuth.auth.signOut();
   }
 
+  /**
+   * @params {string} newEmail
+   * @params {string} newPassword
+   * User signup using firebase auth
+   */
   signupUser(newEmail: string, newPassword: string): firebase.Promise<any> {
     return this.afAuth.auth.createUserWithEmailAndPassword(newEmail, newPassword)
     .then( newUser => {
@@ -35,27 +44,50 @@ export class AuthProvider {
     });
   }
 
+  /**
+   * Use to know if the current user is authenticated
+   */
   get authenticated(): boolean {
     return this.currentUser !== null;
   }
 
+  /**
+   * Fetch current user info, from usersProfile on firebase
+   */
   currentUserInfo(){
-    /*firebase.database().ref('/usersProfile').child(this.currentUser.uid).on('value', data => {
-      this.userProfile = new User(data.val().name,data.val().lastname,data.val().email,data.val().image);
-      console.log(this.userProfile);
-    });*/
     return firebase.database().ref('/usersProfile').child(this.currentUser.uid);
 
   }
 
+  /**
+   * @params {string} name
+   * update the user name on usersProfile from firebase
+   */
+  updateName(name: string){
+    return firebase.database().ref('/usersProfile').child(firebase.auth().currentUser.uid).update({
+      name: name,
+    });
+  }
 
+  /**
+   * @params {string} lastName
+   * update the user lastName on usersProfile from firebase
+   */
+  updateLastName(lastName: string){
+    return firebase.database().ref('/usersProfile').child(firebase.auth().currentUser.uid).update({
+      lastName: lastName,
+    });
+  }
 
-  // displayName(): string {
-  //   if (this.currentUser !== null) {
-  //     return this.currentUser.email;
-  //   } else {
-  //     return '';
-  //   }
-  // }
+  /**
+   * @params {string} image
+   * update the user image on usersProfile from firebase
+   */
+  updateImage(image: string){
+    return firebase.database().ref('/usersProfile').child(firebase.auth().currentUser.uid).update({
+      image: image,
+    });
+  }
+
 
 }

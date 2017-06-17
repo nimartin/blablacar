@@ -5,11 +5,11 @@ import { User } from '../../models/user';
 import { Connexion } from '../connexion/connexion';
 import { UserEditPage } from '../user-edit/user-edit';
 import {
-  Loading,
-  LoadingController, 
-  AlertController } from 'ionic-angular';
+	Loading,
+	LoadingController, 
+	AlertController } from 'ionic-angular';
 
-import firebase from 'firebase/app';
+	import firebase from 'firebase/app';
 
 /**
  * Generated class for the UserPage page.
@@ -17,62 +17,73 @@ import firebase from 'firebase/app';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
-@Component({
-  selector: 'page-user',
-  templateUrl: 'user.html',
-})
-export class UserPage implements OnInit{
+ @IonicPage()
+ @Component({
+ 	selector: 'page-user',
+ 	templateUrl: 'user.html',
+ })
+ export class UserPage implements OnInit{
 
-	private user : User;
-	private userProfile : any;
-	public loading:Loading;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public authProvider: AuthProvider,
-		 public loadingCtrl: LoadingController, public alertCtrl: AlertController) {
+ 	private user : User;
+ 	private userProfile : any;
+ 	public loading:Loading;
+ 	constructor(public navCtrl: NavController, public navParams: NavParams,public authProvider: AuthProvider,
+ 		public loadingCtrl: LoadingController, public alertCtrl: AlertController) {
   	// this.user = this.authProvider.currentUserInfo(); 
   	// console.log(this.user);
   	this.user = new User('','','','');
-
   }
 
-	ngOnInit() {
-		this.authProvider.currentUserInfo().on('value', data => {
-	      this.user = new User(data.val().name,data.val().lastname,data.val().email,data.val().image);
-	      console.log(this.user);
-	    });
-	}
+  /**
+	 * Get the current userProfile Info
+	 */
+  ngOnInit() {
+  	this.authProvider.currentUserInfo().on('value', data => {
+  		this.user = new User(data.val().name,data.val().lastName,data.val().email,data.val().image);
+  		console.log(this.user);
+  	});
+  }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad UserPage');
+  	console.log('ionViewDidLoad UserPage');
   };
 
+
+  /**
+	 * Log out the user using the authProvider
+	 */
   logOut(){
-		this.authProvider.logoutUser().then( authData => {
-        this.loading.dismiss().then( () => {
-          this.navCtrl.setRoot(Connexion);
-        });
-      }, error => {
-        this.loading.dismiss().then( () => {
-          let alert = this.alertCtrl.create({
-            message: error.message,
-            buttons: [
-              {
-                text: "Ok",
-                role: 'cancel'
-              }
-            ]
-          });
-          alert.present();
-        });
-      });
+  	this.authProvider.logoutUser().then( authData => {
+  		this.loading.dismiss().then( () => {
+  			this.navCtrl.setRoot(Connexion);
+  		});
+  	}, error => {
+  		this.loading.dismiss().then( () => {
+  			let alert = this.alertCtrl.create({
+  				message: error.message,
+  				buttons: [
+  				{
+  					text: "Ok",
+  					role: 'cancel'
+  				}
+  				]
+  			});
+  			alert.present();
+  		});
+  	});
 
-      this.loading = this.loadingCtrl.create();
-      this.loading.present();
+  	this.loading = this.loadingCtrl.create();
+  	this.loading.present();
+  }
+
+	/**
+	 * redirect to the edit page
+	 */
+	 edit(){
+	 	this.navCtrl.push(UserEditPage, {
+	 		user: this.user 
+	 	});
+	 }
+
+
 	}
-
-	edit(){
-		this.navCtrl.push(UserEditPage);
-	}
-
-
-}

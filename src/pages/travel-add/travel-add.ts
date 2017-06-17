@@ -14,50 +14,59 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-@IonicPage()
-@Component({
-  selector: 'page-travel-add',
-  templateUrl: 'travel-add.html',
-})
-export class TravelAdd implements OnInit{
-	travels :FirebaseListObservable<Travel[]>;
-	public newTravel: Travel = new Travel('','','',null,'');
-	autocompleteItems: any;
-	autocompleteItemsEnd: any;
-	autocomplete: any;
-	autocompleteEnd: any;
-	acService:any;
-	placesService: any;
-	directionsService : any;
-	duration : any;
+ @IonicPage()
+ @Component({
+ 	selector: 'page-travel-add',
+ 	templateUrl: 'travel-add.html',
+ })
+ export class TravelAdd implements OnInit{
+ 	travels :FirebaseListObservable<Travel[]>;
+ 	public newTravel: Travel = new Travel('','','',null,'');
+ 	autocompleteItems: any;
+ 	autocompleteItemsEnd: any;
+ 	autocomplete: any;
+ 	autocompleteEnd: any;
+ 	acService:any;
+ 	placesService: any;
+ 	directionsService : any;
+ 	duration : any;
 
 
-  	public travelForm: FormGroup;
+ 	public travelForm: FormGroup;
 
-	constructor(public db:AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams
-		,public formBuilder: FormBuilder) {
-		this.travels = db.list('/travels');
-	}
+ 	constructor(public db:AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams
+ 		,public formBuilder: FormBuilder) {
+ 		this.travels = db.list('/travels');
+ 	}
 
-	ngOnInit() {
-		this.acService = new google.maps.places.AutocompleteService();        
-		this.autocompleteItems = [];
-		this.autocomplete = {
-		query: ''
-		}; 
-		this.autocompleteEnd = {
-		query: ''
-		};        
-		this.directionsService = new google.maps.DirectionsService;
-	}
-	updateSearch(autocomplete,type) {
-		console.log('modal > updateSearch');
-		if (this.autocomplete.query == '') {
-			this.autocompleteItems = [];
-			return;
-		}
-		let self = this; 
-		let config = { 
+	/**
+	 * Instanciate all the google maps variables required
+	 */
+	 ngOnInit() {
+	 	this.acService = new google.maps.places.AutocompleteService();        
+	 	this.autocompleteItems = [];
+	 	this.autocomplete = {
+	 		query: ''
+	 	}; 
+	 	this.autocompleteEnd = {
+	 		query: ''
+	 	};        
+	 	this.directionsService = new google.maps.DirectionsService;
+	 }
+
+	/**
+	 * @params {any} autocomplete
+	 * @params {string} type
+	 * Called to get the place predictions when user is typing
+	 */
+	 updateSearch(autocomplete,type) {
+	 	console.log('modal > updateSearch');
+	 	if (this.autocomplete.query == '') {
+	 		this.autocompleteItems = [];
+	 		return;
+	 	}
+	 	let self = this; 
+	 	let config = { 
 			//types:  ['geocode'], // other types available in the API: 'establishment', 'regions', and 'cities'
 			input: autocomplete.query, 
 			componentRestrictions: {  } 
@@ -79,10 +88,14 @@ export class TravelAdd implements OnInit{
 		});
 	}
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TravelAdd');
-  }
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad TravelAdd');
+	}
 
+	/**
+	 * @params {any} item
+	 * Call to get the prediction on start place
+	 */
 	chooseStart(item){
 		this.newTravel.startPlace = item.description;
 		this.autocomplete.query = item.description;
@@ -91,6 +104,10 @@ export class TravelAdd implements OnInit{
 			this.calculTime();
 	}
 
+	/**
+	 * @params {any} item
+	 * Call to get the prediction on end place
+	 */
 	chooseEnd(item){
 		this.newTravel.endPlace = item.description;
 		this.autocompleteEnd.query = item.description;
@@ -99,7 +116,10 @@ export class TravelAdd implements OnInit{
 			this.calculTime();
 	}
 
-  	calculTime(){
+	/**
+	 * Call to get all the routes from startplace to endplace
+	 */
+	calculTime(){
 		this.directionsService.route({
 			origin: this.newTravel.startPlace,
 			destination: this.newTravel.endPlace,
@@ -108,24 +128,31 @@ export class TravelAdd implements OnInit{
 			if (status === 'OK') {
 				this.getDuration(response.routes[0]);
 			} else {
-			console.log(status);
+				console.log(status);
 			}
 		});
-  	}
+	}
 
-  	getDuration(route){
-  		console.log(route);
-  		var finalRoute = route.legs[0];
-  		for(var r in route.legs){
-  			if (route.legs[r].duration.value <  finalRoute.duration.value){
-  				finalRoute = route.legs[r];
-  			}
-  		}
-  		this.newTravel.duration = finalRoute.duration.text;
-  		console.log(this.newTravel.duration);
-  	}
+	/**
+	 * @params {any} route
+	 * Get the better route and its duration
+	 */
+	getDuration(route){
+		console.log(route);
+		var finalRoute = route.legs[0];
+		for(var r in route.legs){
+			if (route.legs[r].duration.value <  finalRoute.duration.value){
+				finalRoute = route.legs[r];
+			}
+		}
+		this.newTravel.duration = finalRoute.duration.text;
+		console.log(this.newTravel.duration);
+	}
 
- 	addTravel(){
+	/**
+	 * Push a travel to firebase
+	 */
+	addTravel(){
 		this.travels.push({
 			startPlace 	: this.newTravel.startPlace,
 			endPlace	: this.newTravel.endPlace,

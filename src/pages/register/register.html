@@ -27,8 +27,8 @@
   <form [formGroup]="signupForm" (submit)="registerUser()" novalidate>
 
     <ion-item>
-      <ion-label stacked>Email</ion-label>
-      <ion-input formControlName="email" type="email" placeholder="Your email address" 
+      <ion-label floating>Email *</ion-label>
+      <ion-input formControlName="email" type="email"
         [class.invalid]="!signupForm.controls.email.valid && signupForm.controls.email.dirty">
       </ion-input>
     </ion-item>
@@ -38,8 +38,8 @@
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>Password</ion-label>
-      <ion-input formControlName="password" type="password" placeholder="Your password" 
+      <ion-label floating>Password *</ion-label>
+      <ion-input formControlName="password" type="password" 
         [class.invalid]="!signupForm.controls.password.valid && signupForm.controls.password.dirty">
       </ion-input>
     </ion-item>
@@ -48,8 +48,8 @@
       <p>Your password needs more than 6 characters.</p>
     </ion-item>
     <ion-item>
-      <ion-label stacked>Password Verify</ion-label>
-      <ion-input formControlName="passwordVerify" type="password" placeholder="Your password verify" 
+      <ion-label floating>Password Verify *</ion-label>
+      <ion-input formControlName="passwordVerify" type="password" 
         [class.invalid]="!signupForm.controls.passwordVerify.valid && signupForm.controls.passwordVerify.dirty ">
       </ion-input>
     </ion-item>
@@ -62,8 +62,9 @@
       *ngIf="signupForm.controls.passwordVerify.valid  && this.signupForm.value.password != this.signupForm.value.passwordVerify">
       <p>Your passwords must be equals</p>
     </ion-item>
+   
     <button ion-button block type="submit" [disabled]="!signupForm.valid || this.signupForm.value.password != this.signupForm.value.passwordVerify">
-      Create an Account
+      Save and go to user profile
     </button>
   </form>
  

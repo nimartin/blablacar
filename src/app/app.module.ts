@@ -20,7 +20,6 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthProvider } from '../providers/auth-service/auth-service';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { TabsService } from '../providers/tabs-service/tabs-service';
 
 import { UserEditPage } from '../pages/user-edit/user-edit';
 
@@ -72,7 +71,6 @@ export const firebaseConfig = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AngularFireAuth,
     AuthProvider,
-    TabsService,
   ]
 })
 export class AppModule {}

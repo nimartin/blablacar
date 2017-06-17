@@ -14,22 +14,12 @@
 
 
 <ion-content padding>
-  <h2>Welcome to bblbalcaracaarar</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
-
 
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
 
     <ion-item>
-      <ion-label stacked>Email</ion-label>
-      <ion-input formControlName="email" type="email" placeholder="Your email address" 
+      <ion-label floating>Email</ion-label>
+      <ion-input formControlName="email" type="email"
         [class.invalid]="!loginForm.controls.email.valid && loginForm.controls.email.dirty"></ion-input>
     </ion-item>
     <ion-item class="error-message" 
@@ -38,8 +28,8 @@
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>Password</ion-label>
-      <ion-input formControlName="password" type="password" placeholder="Your password" 
+      <ion-label floating>Password</ion-label>
+      <ion-input formControlName="password" type="password"
         [class.invalid]="!loginForm.controls.password.valid && loginForm.controls.password.dirty"></ion-input>
     </ion-item>
     <ion-item class="error-message" 

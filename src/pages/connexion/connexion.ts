@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { User } from '../../models/user';
 import { TravelList } from '../travel-list/travel-list';
+import { UserPage } from '../user/user';
 import { TabsPage } from '../tabs/tabs';
 import { TabsService } from '../../providers/tabs-service/tabs-service';
 import { Register } from '../register/register';
@@ -31,7 +32,7 @@ export class Connexion {
 	public registerAccount: User = new User('','','','');
   public loginForm:FormGroup;
   public loading:Loading;
-  constructor(public tabsService:TabsService,public navCtrl: NavController, public authProvider: AuthProvider,
+  constructor(public navCtrl: NavController, public authProvider: AuthProvider,
     public loadingCtrl: LoadingController, public alertCtrl: AlertController , public formBuilder: FormBuilder) {
 
     this.loginForm = formBuilder.group({
@@ -50,7 +51,6 @@ export class Connexion {
           this.loginForm.value.password)
       .then( authData => {
         this.loading.dismiss().then( () => {
-          this.tabsService.currentTab = TravelList;
           this.navCtrl.setRoot(TabsPage);
         });
       }, error => {
@@ -76,10 +76,6 @@ export class Connexion {
     this.navCtrl.push(Register);
   }
 
-  private onSignInSuccess(): void {
-    console.log("wallah");
-    this.tabsService.currentTab = TravelList;
-    this.navCtrl.push(TabsPage);
-  }
+ 
 
 }

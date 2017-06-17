@@ -1,4 +1,4 @@
-<ion-tabs>
-  <ion-tab [root]="tabTravels" tabTitle="Travels" tabIcon="car"></ion-tab>
-  <ion-tab [root]="tabUser" tabTitle="User" tabIcon="contacts"></ion-tab>
+<ion-tabs selectedIndex="{{activeTab}}">
+  <ion-tab [(root)]="tabTravels" tabTitle="Travels" tabIcon="car"></ion-tab>
+  <ion-tab [(root)]="tabUser" tabTitle="User" tabIcon="contacts"></ion-tab>
 </ion-tabs>

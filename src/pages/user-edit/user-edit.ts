@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions, CameraPopoverOptions } from '@ionic-native/camera';
+import { AuthProvider } from '../../providers/auth-service/auth-service';
+import { User } from '../../models/user';
+import { UserPage } from '../user/user';
+import { TabsPage } from '../tabs/tabs';
 
 /**
  * Generated class for the UserEditPage page.
@@ -15,8 +19,10 @@ import { Camera, CameraOptions, CameraPopoverOptions } from '@ionic-native/camer
   providers: [Camera],
 })
 export class UserEditPage {
-	public base64Image: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public camera : Camera) {
+	public user : User;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public camera : Camera,public authProvider: AuthProvider) {
+  		this.user = navParams.get('user');
+  		console.log(this.user);
   }
 
   ionViewDidLoad() {
@@ -24,15 +30,53 @@ export class UserEditPage {
   }
 
 
+  /**
+	 * Allow to open the gallery on mobile phone
+	 * Using Cordova camera
+	 */
   accessGallery(){
    this.camera.getPicture({
      sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
      destinationType: this.camera.DestinationType.DATA_URL
     }).then((imageData) => {
-      this.base64Image = 'data:image/jpeg;base64,'+imageData;
+      this.user.image = 'data:image/jpeg;base64,'+imageData;
+      this.updateImage(this.user.image)
      }, (err) => {
       console.log(err);
     });
   }
+
+  /**
+	 * @params {string} name
+	 * Update the name of the current user thank's to authProvider
+	 */
+
+  updateName(name){
+  	console.log(name);
+		this.authProvider.updateName(name);
+	}
+
+	/**
+	 * @params {string} lastName
+	 * Update the current lastName user thank's to authProvider
+	 */
+	updateLastName(lastName){
+  	console.log(lastName);
+		this.authProvider.updateLastName(lastName);
+	}
+
+	/**
+	 * @params {string} image
+	 * Update the current lastName user thank's to authProvider
+	 */
+	updateImage(image){
+  	console.log(image);
+		this.authProvider.updateImage(image);
+	}
+
+  goToUserProfile(){
+    this.navCtrl.setRoot(TabsPage,{index: 1});
+  }
+  
 
 }
