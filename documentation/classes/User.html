@@ -36,7 +36,14 @@
                         <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
                         <ul class="links">
                                 <li class="link">
-                                    <a href="../" >
+                                    <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
                                         <span class="fa fa-th"></span>Overview
                                     </a>
                                 </li>
@@ -205,7 +212,14 @@
                                <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
                                <ul class="links">
                                        <li class="link">
-                                           <a href="../" >
+                                           <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
                                                <span class="fa fa-th"></span>Overview
                                            </a>
                                        </li>
@@ -383,6 +397,12 @@
             <code>src/models/user.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>User profile for authenticated user</p><br/>
+            </p>
 
 
 
@@ -397,10 +417,15 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="1" class="link-to-prism">src/models/user.ts:1</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">src/models/user.ts:4</a></div>
                                     </td>
                                 </tr>
             
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Instanciate user profile</p><br/></div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -476,13 +501,12 @@
     </div>
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">export class User {
- 
-    constructor(public name: string, public lastName: string, public email:string, public image :string){
- 		
-    }
- 
-    
+	/**
+	 * Instanciate user profile
+	 */
+	constructor(public name: string, public lastName: string, public email:string, public image :string){
 
+	}
 }</code></pre>
     </div>
 </div>

@@ -36,7 +36,14 @@
                         <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
                         <ul class="links">
                                 <li class="link">
-                                    <a href="../" >
+                                    <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
                                         <span class="fa fa-th"></span>Overview
                                     </a>
                                 </li>
@@ -205,7 +212,14 @@
                                <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
                                <ul class="links">
                                        <li class="link">
-                                           <a href="../" >
+                                           <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
                                                <span class="fa fa-th"></span>Overview
                                            </a>
                                        </li>
@@ -499,7 +513,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/providers/google-service/google-service.ts:104</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="101" class="link-to-prism">src/providers/google-service/google-service.ts:101</a></div>
                                     </td>
                                 </tr>
             
@@ -534,7 +548,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="114" class="link-to-prism">src/providers/google-service/google-service.ts:114</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">src/providers/google-service/google-service.ts:111</a></div>
                                     </td>
                                 </tr>
             
@@ -569,7 +583,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="124" class="link-to-prism">src/providers/google-service/google-service.ts:124</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="121" class="link-to-prism">src/providers/google-service/google-service.ts:121</a></div>
                                     </td>
                                 </tr>
             
@@ -604,7 +618,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="142" class="link-to-prism">src/providers/google-service/google-service.ts:142</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="139" class="link-to-prism">src/providers/google-service/google-service.ts:139</a></div>
                                     </td>
                                 </tr>
             
@@ -892,14 +906,11 @@ export class GoogleService {
 		}
 		this.acService.getPlacePredictions(config, function (predictions, status) {
 			if(type &#x3D;&#x3D; &#x27;start&#x27;){
-				self.autocompleteItems &#x3D; [];            
-
-				console.log(&quot;youhou&quot;);
+				self.autocompleteItems &#x3D; [];    
 				predictions.forEach(function (prediction) {              
 					self.autocompleteItems.push(prediction);
 				});
 			}else{
-				console.log(&quot;woullah&quot;);
 				self.autocompleteItemsEnd &#x3D; [];            
 				predictions.forEach(function (prediction) {              
 					self.autocompleteItemsEnd.push(prediction);

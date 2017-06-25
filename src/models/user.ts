@@ -1,9 +1,11 @@
+/**
+ * User profile for authenticated user
+ */
 export class User {
- 
-    constructor(public name: string, public lastName: string, public email:string, public image :string){
- 		
-    }
- 
-    
+	/**
+	 * Instanciate user profile
+	 */
+	constructor(public name: string, public lastName: string, public email:string, public image :string){
 
+	}
 }

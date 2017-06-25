@@ -5,6 +5,10 @@
 1. git clone du projet ou le télécharger
 2. npm install dans le dossier blablacar
 
+### Lancer l'application
+* ionic serve ( sur l'ordinateur )
+* ionic cordova run android
+
 ### Lancer la documentation 
 1. se rendre dans le dossier " documentation "
 2. lancer la commande php -S localhost:8080
