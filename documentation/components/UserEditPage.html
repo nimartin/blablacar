@@ -155,6 +155,9 @@
                                 <li class="link">
                                     <a href="../injectables/AuthProvider.html" >AuthProvider</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../injectables/GoogleService.html" >GoogleService</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -320,6 +323,9 @@
                    >
                                        <li class="link">
                                            <a href="../injectables/AuthProvider.html" >AuthProvider</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/GoogleService.html" >GoogleService</a>
                                        </li>
                                </ul>
                            </li>
@@ -811,7 +817,7 @@ export class UserEditPage {
 &lt;ion-header&gt;
 
   &lt;ion-navbar&gt;
-    &lt;ion-title&gt;user-edit&lt;/ion-title&gt;
+    &lt;ion-title&gt;Edit your profile&lt;/ion-title&gt;
   &lt;/ion-navbar&gt;
 
 &lt;/ion-header&gt;
@@ -864,7 +870,7 @@ export class UserEditPage {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!--  Generated template for the UserEditPage page.  See http://ionicframework.com/docs/components/#navigation for more info on  Ionic pages and navigation.--><ion-header>  <ion-navbar>    <ion-title>user-edit</ion-title>  </ion-navbar></ion-header><ion-content padding>	<ion-list>		<ion-item >		  <ion-label floating>Name</ion-label>		  <ion-input type="text" [(ngModel)]="user.name" (ngModelChange)="updateName(user.name)" name="name"></ion-input>		</ion-item>		<ion-item>		    <ion-label floating>Lastname</ion-label>		    <ion-input type="text"  [(ngModel)]="user.lastName" (ngModelChange)="updateLastName(user.lastName)" name="lastName"></ion-input>		</ion-item>		<ion-item> 			<img [src]="user.image" *ngIf="user.image" />		  	<button ion-button color="primary" (click)="accessGallery()">Ajouter une image</button>		</ion-item>	</ion-list>	<button ion-button block (click)="goToUserProfile()" >      Validate    </button></ion-content></div>'
+        var COMPONENT_TEMPLATE = '<div><!--  Generated template for the UserEditPage page.  See http://ionicframework.com/docs/components/#navigation for more info on  Ionic pages and navigation.--><ion-header>  <ion-navbar>    <ion-title>Edit your profile</ion-title>  </ion-navbar></ion-header><ion-content padding>	<ion-list>		<ion-item >		  <ion-label floating>Name</ion-label>		  <ion-input type="text" [(ngModel)]="user.name" (ngModelChange)="updateName(user.name)" name="name"></ion-input>		</ion-item>		<ion-item>		    <ion-label floating>Lastname</ion-label>		    <ion-input type="text"  [(ngModel)]="user.lastName" (ngModelChange)="updateLastName(user.lastName)" name="lastName"></ion-input>		</ion-item>		<ion-item> 			<img [src]="user.image" *ngIf="user.image" />		  	<button ion-button color="primary" (click)="accessGallery()">Ajouter une image</button>		</ion-item>	</ion-list>	<button ion-button block (click)="goToUserProfile()" >      Validate    </button></ion-content></div>'
     var COMPONENTS = [{'name': 'Connexion', 'selector': 'page-connexion'},{'name': 'MyApp', 'selector': ''},{'name': 'Register', 'selector': 'page-register'},{'name': 'TabsPage', 'selector': ''},{'name': 'TravelAdd', 'selector': 'page-travel-add'},{'name': 'TravelList', 'selector': 'page-travel-list'},{'name': 'UserEditPage', 'selector': 'page-user-edit'},{'name': 'UserPage', 'selector': 'page-user'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'UserEditPage'};

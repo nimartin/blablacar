@@ -133,7 +133,7 @@
                                     <a href="../classes/EmailValidator.html" >EmailValidator</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../classes/Travel.html"  data-type="entity-link" class="active" >Travel</a>
+                                    <a href="../classes/Travel.html" >Travel</a>
                                 </li>
                                 <li class="link">
                                     <a href="../classes/User.html" >User</a>
@@ -156,7 +156,7 @@
                                     <a href="../injectables/AuthProvider.html" >AuthProvider</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../injectables/GoogleService.html" >GoogleService</a>
+                                    <a href="../injectables/GoogleService.html"  data-type="entity-link" class="active" >GoogleService</a>
                                 </li>
                         </ul>
                     </li>
@@ -302,7 +302,7 @@
                                            <a href="../classes/EmailValidator.html" >EmailValidator</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../classes/Travel.html"  data-type="entity-link" class="active" >Travel</a>
+                                           <a href="../classes/Travel.html" >Travel</a>
                                        </li>
                                        <li class="link">
                                            <a href="../classes/User.html" >User</a>
@@ -325,7 +325,7 @@
                                            <a href="../injectables/AuthProvider.html" >AuthProvider</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../injectables/GoogleService.html" >GoogleService</a>
+                                           <a href="../injectables/GoogleService.html"  data-type="entity-link" class="active" >GoogleService</a>
                                        </li>
                                </ul>
                            </li>
@@ -352,17 +352,15 @@
                    
                    </nav>
                </div>
-               <div class="content class">
+               <div class="content injectable">
                    <div class="content-data">
 
 
 
 
-
-
 <ol class="breadcrumb">
-  <li>Classes</li>
-  <li>Travel</li>
+  <li>Injectables</li>
+  <li>GoogleService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -380,10 +378,8 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/models/travel.ts</code>
+            <code>src/providers/google-service/google-service.ts</code>
         </p>
-
-
 
 
             <section>
@@ -392,20 +388,243 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>constructor(startPlace: string, endPlace: string, hourStart: string, nbPlace: number, duration: string)</code>
+                                    <code>constructor()</code>
                                 </td>
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="1" class="link-to-prism">src/models/travel.ts:1</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/providers/google-service/google-service.ts:43</a></div>
                                     </td>
                                 </tr>
             
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Instanciate all the google maps variables required</p><br/></div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
 
-
+            <section>
+                
+                    <h3 id="methods">
+                        Methods
+                    </h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Static</span> ionViewDidLoad</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play export">
+                                            <span class="fa fa-export"></span>
+                                        </span>
+                                    <code>ionViewDidLoad()</code>
+                                </td>
+                            </tr>
+            
+            
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/providers/google-service/google-service.ts:62</a></div>
+                                    </td>
+                                </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Static</span> updateSearch</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play export">
+                                            <span class="fa fa-export"></span>
+                                        </span>
+                                    <code>updateSearch(autocomplete: any, type: any)</code>
+                                </td>
+                            </tr>
+            
+            
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/providers/google-service/google-service.ts:69</a></div>
+                                    </td>
+                                </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Called to get the place predictions when user is typing</p><br/></div>
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Static</span> chooseStart</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play export">
+                                            <span class="fa fa-export"></span>
+                                        </span>
+                                    <code>chooseStart(item: any)</code>
+                                </td>
+                            </tr>
+            
+            
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/providers/google-service/google-service.ts:104</a></div>
+                                    </td>
+                                </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Call to get the prediction on start place</p><br/></div>
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Static</span> chooseEnd</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play export">
+                                            <span class="fa fa-export"></span>
+                                        </span>
+                                    <code>chooseEnd(item: any)</code>
+                                </td>
+                            </tr>
+            
+            
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="114" class="link-to-prism">src/providers/google-service/google-service.ts:114</a></div>
+                                    </td>
+                                </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Call to get the prediction on end place</p><br/></div>
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Static</span> calculTime</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play export">
+                                            <span class="fa fa-export"></span>
+                                        </span>
+                                    <code>calculTime()</code>
+                                </td>
+                            </tr>
+            
+            
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="124" class="link-to-prism">src/providers/google-service/google-service.ts:124</a></div>
+                                    </td>
+                                </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description"><p>Call to get all the routes from startplace to endplace</p><br/></div>
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Static</span> getDuration</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play export">
+                                            <span class="fa fa-export"></span>
+                                        </span>
+                                    <code>getDuration(route: any)</code>
+                                </td>
+                            </tr>
+            
+            
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="142" class="link-to-prism">src/providers/google-service/google-service.ts:142</a></div>
+                                    </td>
+                                </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                        </div>
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>void</code>
+            
+                                        </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
 
             <section>
                 
@@ -416,13 +635,23 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> duration</b>
+                                    <b><span class="modifier">Static</span> acService</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>duration:     <code>string</code>
+                                    <span class="modifier-icon fa fa-export"></span><code>acService:     <code>any</code>
             </bcode>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/providers/google-service/google-service.ts:38</a></div>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>goople maps / places AutoCompleteService</p><br/></div>
                                 </td>
                             </tr>
                         </tbody>
@@ -431,13 +660,23 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> endPlace</b>
+                                    <b><span class="modifier">Static</span> autocomplete</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>endPlace:     <code>string</code>
+                                    <span class="modifier-icon fa fa-export"></span><code>autocomplete:     <code>any</code>
             </bcode>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/providers/google-service/google-service.ts:28</a></div>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>autocomplete for startPlace searchBar</p><br/></div>
                                 </td>
                             </tr>
                         </tbody>
@@ -446,13 +685,23 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> hourStart</b>
+                                    <b><span class="modifier">Static</span> autocompleteEnd</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>hourStart:     <code>string</code>
+                                    <span class="modifier-icon fa fa-export"></span><code>autocompleteEnd:     <code>any</code>
             </bcode>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/providers/google-service/google-service.ts:33</a></div>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>autocomplete for endPlace searchBar</p><br/></div>
                                 </td>
                             </tr>
                         </tbody>
@@ -461,13 +710,23 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> nbPlace</b>
+                                    <b><span class="modifier">Static</span> autocompleteItems</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>nbPlace:     <code>number</code>
+                                    <span class="modifier-icon fa fa-export"></span><code>autocompleteItems:     <code>any</code>
             </bcode>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/providers/google-service/google-service.ts:18</a></div>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Items to autocomplete startPlace searchBar</p><br/></div>
                                 </td>
                             </tr>
                         </tbody>
@@ -476,13 +735,73 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> startPlace</b>
+                                    <b><span class="modifier">Static</span> autocompleteItemsEnd</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>startPlace:     <code>string</code>
+                                    <span class="modifier-icon fa fa-export"></span><code>autocompleteItemsEnd:     <code>any</code>
             </bcode>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/providers/google-service/google-service.ts:23</a></div>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Items to autocomplete endPlace searchBar</p><br/></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Static</span> directionsService</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-export"></span><code>directionsService:     <code>any</code>
+            </bcode>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/providers/google-service/google-service.ts:43</a></div>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Use to calculate the best routes / durations between to place</p><br/></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Static</span> duration</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-export"></span><code>duration:     <code>any</code>
+            </bcode>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/providers/google-service/google-service.ts:14</a></div>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>current duration</p><br/></div>
                                 </td>
                             </tr>
                         </tbody>
@@ -490,17 +809,162 @@
             </section>
     </div>
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">export class Travel {
- 
-    constructor(public startPlace: string, public endPlace: string, public hourStart:string, public nbPlace :number,public duration : string){
- 		
-    }
- 
-    
+        <pre class="line-numbers"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { AngularFireAuth } from &#x27;angularfire2/auth&#x27;;
+import { User } from &#x27;../../models/user&#x27;;
+import firebase from &#x27;firebase/app&#x27;;
+import { GoogleMap, GoogleMapsEvent, GoogleMapsLatLng } from &#x27;ionic-native&#x27;;
+import {googlemaps} from &#x27;googlemaps&#x27;
+
+declare var google;
+@Injectable()
+export class GoogleService {
+	/**
+	* current duration
+	*/
+ 	public duration: any ;
+  /**
+	* Items to autocomplete startPlace searchBar
+	*/
+ 	public autocompleteItems: any ;
+
+ 	/**
+	* Items to autocomplete endPlace searchBar
+	*/
+ 	public autocompleteItemsEnd: any ;
+
+ 	/**
+	* autocomplete for startPlace searchBar
+	*/
+ 	public autocomplete: any ;
+
+ 	/**
+	* autocomplete for endPlace searchBar
+	*/
+ 	public autocompleteEnd: any ;
+
+ 	/**
+	* goople maps / places AutoCompleteService
+	*/
+ 	public acService:any ;
+
+ 	/**
+	* Use to calculate the best routes / durations between to place
+	*/
+ 	public directionsService : any ;
+
+ 	/**
+	 * Instanciate all the google maps variables required
+	 */
+  public constructor() {
+  	this.acService &#x3D; new google.maps.places.AutocompleteService();        
+  	console.log(this.acService);
+	 	this.autocompleteItems &#x3D; [];
+	 	this.autocomplete &#x3D; {
+	 		query: &#x27;&#x27;
+	 	}; 
+	 	this.autocompleteEnd &#x3D; {
+	 		query: &#x27;&#x27;
+	 	};        
+	 	this.directionsService &#x3D; new google.maps.DirectionsService;
+	 	this.duration ;
+  }
+
+  public ionViewDidLoad(){
+  	
+  }
+
+ 	/**
+	 * Called to get the place predictions when user is typing
+	 */
+	 public updateSearch(autocomplete,type) {
+	 	console.log(autocomplete.query);
+	 	if (autocomplete.query &#x3D;&#x3D; &#x27;&#x27;) {
+	 		this.autocompleteItems &#x3D; [];
+	 		this.autocompleteItemsEnd &#x3D; [];
+	 		return;
+	 	}
+	 	let self &#x3D; this; 
+	 	let config &#x3D; { 
+			//types:  [&#x27;geocode&#x27;], // other types available in the API: &#x27;establishment&#x27;, &#x27;regions&#x27;, and &#x27;cities&#x27;
+			input: autocomplete.query, 
+			componentRestrictions: {  } 
+		}
+		this.acService.getPlacePredictions(config, function (predictions, status) {
+			if(type &#x3D;&#x3D; &#x27;start&#x27;){
+				self.autocompleteItems &#x3D; [];            
+
+				console.log(&quot;youhou&quot;);
+				predictions.forEach(function (prediction) {              
+					self.autocompleteItems.push(prediction);
+				});
+			}else{
+				console.log(&quot;woullah&quot;);
+				self.autocompleteItemsEnd &#x3D; [];            
+				predictions.forEach(function (prediction) {              
+					self.autocompleteItemsEnd.push(prediction);
+				});
+			}
+			
+		});
+	}
+
+	/**
+	 * Call to get the prediction on start place
+	 */
+	public chooseStart(item){
+		this.autocomplete.query &#x3D; item.description;
+		this.autocompleteItems &#x3D; [];
+		if(this.autocomplete.query !&#x3D; &#x27;&#x27; &amp;&amp; this.autocompleteEnd.query !&#x3D; &#x27;&#x27;)
+			this.calculTime();
+	}
+
+	/**
+	 * Call to get the prediction on end place
+	 */
+	public chooseEnd(item){
+		this.autocompleteEnd.query &#x3D; item.description;
+		this.autocompleteItemsEnd &#x3D; [];
+		if(this.autocomplete.query !&#x3D; &#x27;&#x27; &amp;&amp; this.autocompleteEnd.query !&#x3D; &#x27;&#x27;)
+			this.calculTime();
+	}
+
+	/**
+	 * Call to get all the routes from startplace to endplace
+	 */
+	public calculTime(){
+		this.directionsService.route({
+			origin: this.autocompleteEnd.query,
+			destination: this.autocomplete.query,
+			travelMode: &#x27;DRIVING&#x27;
+		}, (response, status) &#x3D;&gt; {
+			if (status &#x3D;&#x3D;&#x3D; &#x27;OK&#x27;) {
+				this.getDuration(response.routes[0]);
+			} else {
+				console.log(status);
+			}
+		});
+	}
+
+	/**
+	 * @params {any} route
+	 * Get the better route and its duration
+	 */
+	public getDuration(route){
+		var finalRoute &#x3D; route.legs[0];
+		for(var r in route.legs){
+			if (route.legs[r].duration.value &lt;  finalRoute.duration.value){
+				finalRoute &#x3D; route.legs[r];
+			}
+		}
+		this.duration &#x3D; finalRoute.duration.text;
+	}
 
 }</code></pre>
     </div>
 </div>
+
+
 
 
 

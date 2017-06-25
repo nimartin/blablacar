@@ -18,6 +18,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AuthProvider } from '../providers/auth-service/auth-service';
+import { GoogleService } from '../providers/google-service/google-service';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { UserEditPage } from '../pages/user-edit/user-edit';
@@ -69,6 +70,7 @@ export const firebaseConfig = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AngularFireAuth,
     AuthProvider,
+    GoogleService,
   ]
 })
 export class AppModule {}

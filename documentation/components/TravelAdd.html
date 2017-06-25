@@ -155,6 +155,9 @@
                                 <li class="link">
                                     <a href="../injectables/AuthProvider.html" >AuthProvider</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../injectables/GoogleService.html" >GoogleService</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -321,6 +324,9 @@
                                        <li class="link">
                                            <a href="../injectables/AuthProvider.html" >AuthProvider</a>
                                        </li>
+                                       <li class="link">
+                                           <a href="../injectables/GoogleService.html" >GoogleService</a>
+                                       </li>
                                </ul>
                            </li>
                    
@@ -388,12 +394,6 @@
     </p>
 
 
-    <p class="comment">
-        <h3>Implements</h3>
-    </p>
-    <p class="comment">
-                <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnInit-interface.html" target="_blank" >OnInit</a></code>
-    </p>
 
 
 <section>
@@ -438,12 +438,12 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(db: AngularFireDatabase, navCtrl: NavController, navParams: NavParams)</code>
+                            <code>constructor(db: AngularFireDatabase, navCtrl: NavController, navParams: NavParams, googleService: <a href="../injectables/GoogleService.html">GoogleService</a>)</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/pages/travel-add/travel-add.ts:60</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/pages/travel-add/travel-add.ts:31</a></div>
                             </td>
                         </tr>
     
@@ -465,233 +465,6 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> ngOnInit</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>ngOnInit()</code>
-                        </td>
-                    </tr>
-    
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/pages/travel-add/travel-add.ts:72</a></div>
-                            </td>
-                        </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description"><p>Instanciate all the google maps variables required</p><br/></div>
-    
-                                <div class="io-description">
-                                    <b>Returns : </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> updateSearch</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>updateSearch(autocomplete: any, type: any)</code>
-                        </td>
-                    </tr>
-    
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/pages/travel-add/travel-add.ts:87</a></div>
-                            </td>
-                        </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description"><p>Called to get the place predictions when user is typing</p><br/></div>
-    
-                                <div class="io-description">
-                                    <b>Returns : </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> ionViewDidLoad</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>ionViewDidLoad()</code>
-                        </td>
-                    </tr>
-    
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/pages/travel-add/travel-add.ts:116</a></div>
-                            </td>
-                        </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                    <b>Returns : </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> chooseStart</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>chooseStart(item: any)</code>
-                        </td>
-                    </tr>
-    
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="123" class="link-to-prism">src/pages/travel-add/travel-add.ts:123</a></div>
-                            </td>
-                        </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description"><p>Call to get the prediction on start place</p><br/></div>
-    
-                                <div class="io-description">
-                                    <b>Returns : </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> chooseEnd</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>chooseEnd(item: any)</code>
-                        </td>
-                    </tr>
-    
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="134" class="link-to-prism">src/pages/travel-add/travel-add.ts:134</a></div>
-                            </td>
-                        </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description"><p>Call to get the prediction on end place</p><br/></div>
-    
-                                <div class="io-description">
-                                    <b>Returns : </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> calculTime</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>calculTime()</code>
-                        </td>
-                    </tr>
-    
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="145" class="link-to-prism">src/pages/travel-add/travel-add.ts:145</a></div>
-                            </td>
-                        </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description"><p>Call to get all the routes from startplace to endplace</p><br/></div>
-    
-                                <div class="io-description">
-                                    <b>Returns : </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> getDuration</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>getDuration(route: any)</code>
-                        </td>
-                    </tr>
-    
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="163" class="link-to-prism">src/pages/travel-add/travel-add.ts:163</a></div>
-                            </td>
-                        </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                </div>
-                                <div class="io-description">
-                                    <b>Returns : </b>    <code>void</code>
-    
-                                </div>
-                                    <div class="io-description">
-                                        
-                                    </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
                             <b> addTravel</b>
                         </td>
                     </tr>
@@ -704,7 +477,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="176" class="link-to-prism">src/pages/travel-add/travel-add.ts:176</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/pages/travel-add/travel-add.ts:45</a></div>
                             </td>
                         </tr>
     
@@ -731,131 +504,6 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> acService</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>acService:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/pages/travel-add/travel-add.ts:55</a></div>
-                            </td>
-                        </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-description"><p>goople maps / places AutoCompleteService</p><br/></div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> autocomplete</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>autocomplete:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/pages/travel-add/travel-add.ts:45</a></div>
-                            </td>
-                        </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-description"><p>autocomplete for startPlace searchBar</p><br/></div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> autocompleteEnd</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>autocompleteEnd:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/pages/travel-add/travel-add.ts:50</a></div>
-                            </td>
-                        </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-description"><p>autocomplete for endPlace searchBar</p><br/></div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> autocompleteItems</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>autocompleteItems:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/pages/travel-add/travel-add.ts:35</a></div>
-                            </td>
-                        </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-description"><p>Items to autocomplete startPlace searchBar</p><br/></div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> autocompleteItemsEnd</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>autocompleteItemsEnd:     <code>any</code>
-    </bcode>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/pages/travel-add/travel-add.ts:40</a></div>
-                            </td>
-                        </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-description"><p>Items to autocomplete endPlace searchBar</p><br/></div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
                             <b> db</b>
                         </td>
                     </tr>
@@ -871,23 +519,13 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> directionsService</b>
+                            <b> googleService</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <code>directionsService:     <code>any</code>
+                            <code>googleService:     <code><a href="../injectables/GoogleService.html" target="_self" >GoogleService</a></code>
     </bcode>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/pages/travel-add/travel-add.ts:60</a></div>
-                            </td>
-                        </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <div class="io-description"><p>Use to calculate the best routes / durations between to place</p><br/></div>
                         </td>
                     </tr>
                 </tbody>
@@ -937,7 +575,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/pages/travel-add/travel-add.ts:30</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/pages/travel-add/travel-add.ts:31</a></div>
                             </td>
                         </tr>
                     <tr>
@@ -962,7 +600,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/pages/travel-add/travel-add.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/pages/travel-add/travel-add.ts:26</a></div>
                             </td>
                         </tr>
                     <tr>
@@ -977,13 +615,14 @@
 
 
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 import { IonicPage, NavController, NavParams } from &#x27;ionic-angular&#x27;;
 import { Travel } from &#x27;../../models/travel&#x27;;
 import { TravelList } from &#x27;../travel-list/travel-list&#x27;;
 import {AngularFireDatabase, FirebaseListObservable} from &#x27;angularfire2/database&#x27;;
 import { GoogleMap, GoogleMapsEvent, GoogleMapsLatLng } from &#x27;ionic-native&#x27;;
-import {googlemaps} from &#x27;googlemaps&#x27;
+import {googlemaps} from &#x27;googlemaps&#x27;;
+import { GoogleService } from &#x27;../../providers/google-service/google-service&#x27;;
 
 //declare var google : any;
 /**
@@ -997,7 +636,7 @@ import {googlemaps} from &#x27;googlemaps&#x27;
  	selector: &#x27;page-travel-add&#x27;,
  	templateUrl: &#x27;travel-add.html&#x27;,
  })
- export class TravelAdd implements OnInit{
+ export class TravelAdd{
  	/**
 	* travels from firebase
 	*/
@@ -1008,157 +647,25 @@ import {googlemaps} from &#x27;googlemaps&#x27;
 	*/
  	public newTravel: Travel &#x3D; new Travel(&#x27;&#x27;,&#x27;&#x27;,&#x27;&#x27;,null,&#x27;&#x27;);
 
- 	/**
-	* Items to autocomplete startPlace searchBar
-	*/
- 	autocompleteItems: any;
-
- 	/**
-	* Items to autocomplete endPlace searchBar
-	*/
- 	autocompleteItemsEnd: any;
-
- 	/**
-	* autocomplete for startPlace searchBar
-	*/
- 	autocomplete: any;
-
- 	/**
-	* autocomplete for endPlace searchBar
-	*/
- 	autocompleteEnd: any;
-
- 	/**
-	* goople maps / places AutoCompleteService
-	*/
- 	acService:any;
-
- 	/**
-	* Use to calculate the best routes / durations between to place
-	*/
- 	directionsService : any;
 
  	/**
 	* Instanciate the firebase travels
 	*/
- 	constructor(public db:AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams) {
+ 	constructor(public db:AngularFireDatabase, public navCtrl: NavController, public navParams: NavParams,public googleService : GoogleService) {
  		this.travels &#x3D; db.list(&#x27;/travels&#x27;);
+ 		console.log(googleService);
  	}
-
-	/**
-	 * Instanciate all the google maps variables required
-	 */
-	 ngOnInit() {
-	 	this.acService &#x3D; new google.maps.places.AutocompleteService();        
-	 	this.autocompleteItems &#x3D; [];
-	 	this.autocomplete &#x3D; {
-	 		query: &#x27;&#x27;
-	 	}; 
-	 	this.autocompleteEnd &#x3D; {
-	 		query: &#x27;&#x27;
-	 	};        
-	 	this.directionsService &#x3D; new google.maps.DirectionsService;
-	 }
-
-	/**
-	 * Called to get the place predictions when user is typing
-	 */
-	 updateSearch(autocomplete,type) {
-	 	console.log(&#x27;modal &gt; updateSearch&#x27;);
-	 	if (this.autocomplete.query &#x3D;&#x3D; &#x27;&#x27;) {
-	 		this.autocompleteItems &#x3D; [];
-	 		return;
-	 	}
-	 	let self &#x3D; this; 
-	 	let config &#x3D; { 
-			//types:  [&#x27;geocode&#x27;], // other types available in the API: &#x27;establishment&#x27;, &#x27;regions&#x27;, and &#x27;cities&#x27;
-			input: autocomplete.query, 
-			componentRestrictions: {  } 
-		}
-		this.acService.getPlacePredictions(config, function (predictions, status) {
-			console.log(&#x27;modal &gt; getPlacePredictions &gt; status &gt; &#x27;, status);
-			if(type &#x3D;&#x3D; &#x27;start&#x27;){
-				self.autocompleteItems &#x3D; [];            
-				predictions.forEach(function (prediction) {              
-					self.autocompleteItems.push(prediction);
-				});
-			}else{
-				self.autocompleteItemsEnd &#x3D; [];            
-				predictions.forEach(function (prediction) {              
-					self.autocompleteItemsEnd.push(prediction);
-				});
-			}
-			
-		});
-	}
-
-	ionViewDidLoad() {
-		console.log(&#x27;ionViewDidLoad TravelAdd&#x27;);
-	}
-
-	/**
-	 * Call to get the prediction on start place
-	 */
-	chooseStart(item){
-		this.newTravel.startPlace &#x3D; item.description;
-		this.autocomplete.query &#x3D; item.description;
-		this.autocompleteItems &#x3D; [];
-		if(this.newTravel.startPlace !&#x3D; &#x27;&#x27; &amp;&amp; this.newTravel.endPlace !&#x3D; &#x27;&#x27;)
-			this.calculTime();
-	}
-
-	/**
-	 * Call to get the prediction on end place
-	 */
-	chooseEnd(item){
-		this.newTravel.endPlace &#x3D; item.description;
-		this.autocompleteEnd.query &#x3D; item.description;
-		this.autocompleteItemsEnd &#x3D; [];
-		if(this.newTravel.startPlace !&#x3D; &#x27;&#x27; &amp;&amp; this.newTravel.endPlace !&#x3D; &#x27;&#x27;)
-			this.calculTime();
-	}
-
-	/**
-	 * Call to get all the routes from startplace to endplace
-	 */
-	calculTime(){
-		this.directionsService.route({
-			origin: this.newTravel.startPlace,
-			destination: this.newTravel.endPlace,
-			travelMode: &#x27;DRIVING&#x27;
-		}, (response, status) &#x3D;&gt; {
-			if (status &#x3D;&#x3D;&#x3D; &#x27;OK&#x27;) {
-				this.getDuration(response.routes[0]);
-			} else {
-				console.log(status);
-			}
-		});
-	}
-
-	/**
-	 * @params {any} route
-	 * Get the better route and its duration
-	 */
-	getDuration(route){
-		var finalRoute &#x3D; route.legs[0];
-		for(var r in route.legs){
-			if (route.legs[r].duration.value &lt;  finalRoute.duration.value){
-				finalRoute &#x3D; route.legs[r];
-			}
-		}
-		this.newTravel.duration &#x3D; finalRoute.duration.text;
-	}
 
 	/**
 	 * Push a travel to firebase
 	 */
 	addTravel(){
 		this.travels.push({
-			startPlace 	: this.newTravel.startPlace,
-			endPlace	: this.newTravel.endPlace,
+			startPlace 	: this.googleService.autocomplete.query,
+			endPlace	: this.googleService.autocompleteEnd.query,
 			hourStart		: this.newTravel.hourStart,
 			nbPlace	: this.newTravel.nbPlace,
-			duration : this.newTravel.duration
+			duration : this.googleService.duration
 		});
 		this.navCtrl.push(TravelList);
 	}
@@ -1177,7 +684,7 @@ import {googlemaps} from &#x27;googlemaps&#x27;
 &lt;ion-header&gt;
 
   &lt;ion-navbar&gt;
-    &lt;ion-title&gt;travel-add&lt;/ion-title&gt;
+    &lt;ion-title&gt;Add a travel&lt;/ion-title&gt;
   &lt;/ion-navbar&gt;
 
 &lt;/ion-header&gt;
@@ -1185,38 +692,38 @@ import {googlemaps} from &#x27;googlemaps&#x27;
 
 &lt;ion-content padding&gt;
   &lt;ion-searchbar 
-    [(ngModel)]&#x3D;&quot;autocomplete.query&quot; 
+    [(ngModel)]&#x3D;&quot;googleService.autocomplete.query&quot; 
     [showCancelButton]&#x3D;&quot;true&quot; 
-    (ionInput)&#x3D;&quot;updateSearch(autocomplete,&#x27;start&#x27;)&quot; 
+    (ionInput)&#x3D;&quot;googleService.updateSearch(googleService.autocomplete,&#x27;start&#x27;)&quot; 
     (ionCancel)&#x3D;&quot;dismiss()&quot;
     placeholder&#x3D;&quot;Start place&quot;&gt;
   &lt;/ion-searchbar&gt;
   &lt;ion-list&gt;
-    &lt;ion-item *ngFor&#x3D;&quot;let item of autocompleteItems&quot; 
-    (click)&#x3D;&quot;chooseStart(item)&quot;&gt;
+    &lt;ion-item *ngFor&#x3D;&quot;let item of googleService.autocompleteItems&quot; 
+    (click)&#x3D;&quot;googleService.chooseStart(item)&quot;&gt;
     {{ item.description }}
     &lt;/ion-item&gt;
   &lt;/ion-list&gt;
 
   &lt;ion-searchbar 
-    [(ngModel)]&#x3D;&quot;autocompleteEnd.query&quot; 
+    [(ngModel)]&#x3D;&quot;googleService.autocompleteEnd.query&quot; 
     [showCancelButton]&#x3D;&quot;true&quot; 
-    (ionInput)&#x3D;&quot;updateSearch(autocompleteEnd,&#x27;end&#x27;)&quot; 
+    (ionInput)&#x3D;&quot;googleService.updateSearch(googleService.autocompleteEnd,&#x27;end&#x27;)&quot; 
     (ionCancel)&#x3D;&quot;dismiss()&quot;
     placeholder&#x3D;&quot;End place&quot;&gt;
   &lt;/ion-searchbar&gt;
   &lt;ion-list&gt;
-    &lt;ion-item *ngFor&#x3D;&quot;let item of autocompleteItemsEnd&quot; 
-    (click)&#x3D;&quot;chooseEnd(item)&quot;&gt;
+    &lt;ion-item *ngFor&#x3D;&quot;let item of googleService.autocompleteItemsEnd&quot; 
+    (click)&#x3D;&quot;googleService.chooseEnd(item)&quot;&gt;
     {{ item.description }}
     &lt;/ion-item&gt;
   &lt;/ion-list&gt;
 
   &lt;ion-list&gt;
-    &lt;ion-item *ngIf&#x3D;&quot;newTravel.duration !&#x3D; &#x27;&#x27;&quot;&gt;
+    &lt;ion-item *ngIf&#x3D;&quot;googleService.duration !&#x3D; &#x27;&#x27;&quot;&gt;
       &lt;ion-label floating&gt;Duration&lt;/ion-label&gt;
-      &lt;ion-input [(ngModel)]&#x3D;&quot;newTravel.duration&quot; disabled type&#x3D;&quot;text&quot;&gt;&lt;/ion-input&gt;
-      &lt;span &gt;{{newTravel.duration}}&lt;/span&gt;
+      &lt;ion-input [(ngModel)]&#x3D;&quot;googleService.duration&quot; disabled type&#x3D;&quot;text&quot;&gt;&lt;/ion-input&gt;
+      &lt;span &gt;{{googleService.duration}}&lt;/span&gt;
     &lt;/ion-item&gt;
 
     &lt;ion-item&gt;
@@ -1264,7 +771,7 @@ import {googlemaps} from &#x27;googlemaps&#x27;
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!--  Generated template for the TravelAdd page.  See http://ionicframework.com/docs/components/#navigation for more info on  Ionic pages and navigation.--><ion-header>  <ion-navbar>    <ion-title>travel-add</ion-title>  </ion-navbar></ion-header><ion-content padding>  <ion-searchbar     [(ngModel)]="autocomplete.query"     [showCancelButton]="true"     (ionInput)="updateSearch(autocomplete,\'start\')"     (ionCancel)="dismiss()"    placeholder="Start place">  </ion-searchbar>  <ion-list>    <ion-item *ngFor="let item of autocompleteItems"     (click)="chooseStart(item)">    {{ item.description }}    </ion-item>  </ion-list>  <ion-searchbar     [(ngModel)]="autocompleteEnd.query"     [showCancelButton]="true"     (ionInput)="updateSearch(autocompleteEnd,\'end\')"     (ionCancel)="dismiss()"    placeholder="End place">  </ion-searchbar>  <ion-list>    <ion-item *ngFor="let item of autocompleteItemsEnd"     (click)="chooseEnd(item)">    {{ item.description }}    </ion-item>  </ion-list>  <ion-list>    <ion-item *ngIf="newTravel.duration != \'\'">      <ion-label floating>Duration</ion-label>      <ion-input [(ngModel)]="newTravel.duration" disabled type="text"></ion-input>      <span >{{newTravel.duration}}</span>    </ion-item>    <ion-item>        <ion-label floating>Start Time</ion-label>        <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="newTravel.hourStart"></ion-datetime>    </ion-item>    <ion-item>      <ion-label floating>Nombre de places</ion-label>      <ion-input [(ngModel)]="newTravel.nbPlace" type="text"></ion-input>    </ion-item>  </ion-list>  <button (click)=\'addTravel()\' block ion-button icon-right           [disabled]="newTravel.startPlace == \'\' && newTravel.endPlace == \'\'           && newTravel.nbPlace ==null && newTravel.hourStart ==\'\'  ">    Add Travel    <ion-icon name="car"></ion-icon>  </button></ion-content></div>'
+        var COMPONENT_TEMPLATE = '<div><!--  Generated template for the TravelAdd page.  See http://ionicframework.com/docs/components/#navigation for more info on  Ionic pages and navigation.--><ion-header>  <ion-navbar>    <ion-title>Add a travel</ion-title>  </ion-navbar></ion-header><ion-content padding>  <ion-searchbar     [(ngModel)]="googleService.autocomplete.query"     [showCancelButton]="true"     (ionInput)="googleService.updateSearch(googleService.autocomplete,\'start\')"     (ionCancel)="dismiss()"    placeholder="Start place">  </ion-searchbar>  <ion-list>    <ion-item *ngFor="let item of googleService.autocompleteItems"     (click)="googleService.chooseStart(item)">    {{ item.description }}    </ion-item>  </ion-list>  <ion-searchbar     [(ngModel)]="googleService.autocompleteEnd.query"     [showCancelButton]="true"     (ionInput)="googleService.updateSearch(googleService.autocompleteEnd,\'end\')"     (ionCancel)="dismiss()"    placeholder="End place">  </ion-searchbar>  <ion-list>    <ion-item *ngFor="let item of googleService.autocompleteItemsEnd"     (click)="googleService.chooseEnd(item)">    {{ item.description }}    </ion-item>  </ion-list>  <ion-list>    <ion-item *ngIf="googleService.duration != \'\'">      <ion-label floating>Duration</ion-label>      <ion-input [(ngModel)]="googleService.duration" disabled type="text"></ion-input>      <span >{{googleService.duration}}</span>    </ion-item>    <ion-item>        <ion-label floating>Start Time</ion-label>        <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="newTravel.hourStart"></ion-datetime>    </ion-item>    <ion-item>      <ion-label floating>Nombre de places</ion-label>      <ion-input [(ngModel)]="newTravel.nbPlace" type="text"></ion-input>    </ion-item>  </ion-list>  <button (click)=\'addTravel()\' block ion-button icon-right           [disabled]="newTravel.startPlace == \'\' && newTravel.endPlace == \'\'           && newTravel.nbPlace ==null && newTravel.hourStart ==\'\'  ">    Add Travel    <ion-icon name="car"></ion-icon>  </button></ion-content></div>'
     var COMPONENTS = [{'name': 'Connexion', 'selector': 'page-connexion'},{'name': 'MyApp', 'selector': ''},{'name': 'Register', 'selector': 'page-register'},{'name': 'TabsPage', 'selector': ''},{'name': 'TravelAdd', 'selector': 'page-travel-add'},{'name': 'TravelList', 'selector': 'page-travel-list'},{'name': 'UserEditPage', 'selector': 'page-user-edit'},{'name': 'UserPage', 'selector': 'page-user'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TravelAdd'};

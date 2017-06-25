@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>travel-add</ion-title>
+    <ion-title>Add a travel</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,38 +15,38 @@
 
 <ion-content padding>
   <ion-searchbar 
-    [(ngModel)]="autocomplete.query" 
+    [(ngModel)]="googleService.autocomplete.query" 
     [showCancelButton]="true" 
-    (ionInput)="updateSearch(autocomplete,'start')" 
+    (ionInput)="googleService.updateSearch(googleService.autocomplete,'start')" 
     (ionCancel)="dismiss()"
     placeholder="Start place">
   </ion-searchbar>
   <ion-list>
-    <ion-item *ngFor="let item of autocompleteItems" 
-    (click)="chooseStart(item)">
+    <ion-item *ngFor="let item of googleService.autocompleteItems" 
+    (click)="googleService.chooseStart(item)">
     {{ item.description }}
     </ion-item>
   </ion-list>
 
   <ion-searchbar 
-    [(ngModel)]="autocompleteEnd.query" 
+    [(ngModel)]="googleService.autocompleteEnd.query" 
     [showCancelButton]="true" 
-    (ionInput)="updateSearch(autocompleteEnd,'end')" 
+    (ionInput)="googleService.updateSearch(googleService.autocompleteEnd,'end')" 
     (ionCancel)="dismiss()"
     placeholder="End place">
   </ion-searchbar>
   <ion-list>
-    <ion-item *ngFor="let item of autocompleteItemsEnd" 
-    (click)="chooseEnd(item)">
+    <ion-item *ngFor="let item of googleService.autocompleteItemsEnd" 
+    (click)="googleService.chooseEnd(item)">
     {{ item.description }}
     </ion-item>
   </ion-list>
 
   <ion-list>
-    <ion-item *ngIf="newTravel.duration != ''">
+    <ion-item *ngIf="googleService.duration != ''">
       <ion-label floating>Duration</ion-label>
-      <ion-input [(ngModel)]="newTravel.duration" disabled type="text"></ion-input>
-      <span >{{newTravel.duration}}</span>
+      <ion-input [(ngModel)]="googleService.duration" disabled type="text"></ion-input>
+      <span >{{googleService.duration}}</span>
     </ion-item>
 
     <ion-item>

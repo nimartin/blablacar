@@ -7,7 +7,7 @@
 <ion-header>
 
 	<ion-navbar>
-		<ion-title>travelList</ion-title>
+		<ion-title>List of travels</ion-title>
 		<ion-buttons end> 
 			<button (click)="logOut()" clear end  ion-button icon-only>
 			  <ion-icon name="log-out"></ion-icon>
@@ -21,7 +21,8 @@
 <ion-content padding>
 	<ion-list>
 	  <ion-item *ngFor="let travel of travels">
-	    <h2>{{travel.startPlace}} -> {{travel.endPlace}}</h2>
+	    <h2><b>From</b> : {{travel.startPlace}}</h2>
+	    <h2><b>To</b> : {{travel.endPlace}}</h2>
 	    <h3>Start hour : {{travel.hourStart}}</h3>
 	    <h3>Places : {{travel.nbPlace}}</h3>
 	    <p>Duration : {{travel.duration}}</p>

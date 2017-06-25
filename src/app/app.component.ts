@@ -6,6 +6,9 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Connexion } from '../pages/connexion/connexion';
 import { TabsPage } from '../pages/tabs/tabs';
 
+/**
+ * The main component 
+ */
 @Component({
   templateUrl: 'app.html'
 })

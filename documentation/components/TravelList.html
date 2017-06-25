@@ -155,6 +155,9 @@
                                 <li class="link">
                                     <a href="../injectables/AuthProvider.html" >AuthProvider</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../injectables/GoogleService.html" >GoogleService</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -320,6 +323,9 @@
                    >
                                        <li class="link">
                                            <a href="../injectables/AuthProvider.html" >AuthProvider</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/GoogleService.html" >GoogleService</a>
                                        </li>
                                </ul>
                            </li>
@@ -769,7 +775,7 @@ import {
 &lt;ion-header&gt;
 
 	&lt;ion-navbar&gt;
-		&lt;ion-title&gt;travelList&lt;/ion-title&gt;
+		&lt;ion-title&gt;List of travels&lt;/ion-title&gt;
 		&lt;ion-buttons end&gt; 
 			&lt;button (click)&#x3D;&quot;logOut()&quot; clear end  ion-button icon-only&gt;
 			  &lt;ion-icon name&#x3D;&quot;log-out&quot;&gt;&lt;/ion-icon&gt;
@@ -783,7 +789,8 @@ import {
 &lt;ion-content padding&gt;
 	&lt;ion-list&gt;
 	  &lt;ion-item *ngFor&#x3D;&quot;let travel of travels&quot;&gt;
-	    &lt;h2&gt;{{travel.startPlace}} -&gt; {{travel.endPlace}}&lt;/h2&gt;
+	    &lt;h2&gt;&lt;b&gt;From&lt;/b&gt; : {{travel.startPlace}}&lt;/h2&gt;
+	    &lt;h2&gt;&lt;b&gt;To&lt;/b&gt; : {{travel.endPlace}}&lt;/h2&gt;
 	    &lt;h3&gt;Start hour : {{travel.hourStart}}&lt;/h3&gt;
 	    &lt;h3&gt;Places : {{travel.nbPlace}}&lt;/h3&gt;
 	    &lt;p&gt;Duration : {{travel.duration}}&lt;/p&gt;
@@ -819,7 +826,7 @@ import {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!--  Generated template for the TravelList page.  See http://ionicframework.com/docs/components/#navigation for more info on  Ionic pages and navigation.--><ion-header>	<ion-navbar>		<ion-title>travelList</ion-title>		<ion-buttons end> 			<button (click)="logOut()" clear end  ion-button icon-only>			  <ion-icon name="log-out"></ion-icon>			</button>		</ion-buttons>	</ion-navbar></ion-header><ion-content padding>	<ion-list>	  <ion-item *ngFor="let travel of travels">	    <h2>{{travel.startPlace}} -> {{travel.endPlace}}</h2>	    <h3>Start hour : {{travel.hourStart}}</h3>	    <h3>Places : {{travel.nbPlace}}</h3>	    <p>Duration : {{travel.duration}}</p>	  </ion-item>	</ion-list>	<ion-fab right bottom>    <button (click)="goToAddTravel()" color="danger" ion-fab><ion-icon  name="add" ></ion-icon></button>  </ion-fab></ion-content></div>'
+        var COMPONENT_TEMPLATE = '<div><!--  Generated template for the TravelList page.  See http://ionicframework.com/docs/components/#navigation for more info on  Ionic pages and navigation.--><ion-header>	<ion-navbar>		<ion-title>List of travels</ion-title>		<ion-buttons end> 			<button (click)="logOut()" clear end  ion-button icon-only>			  <ion-icon name="log-out"></ion-icon>			</button>		</ion-buttons>	</ion-navbar></ion-header><ion-content padding>	<ion-list>	  <ion-item *ngFor="let travel of travels">	    <h2><b>From</b> : {{travel.startPlace}}</h2>	    <h2><b>To</b> : {{travel.endPlace}}</h2>	    <h3>Start hour : {{travel.hourStart}}</h3>	    <h3>Places : {{travel.nbPlace}}</h3>	    <p>Duration : {{travel.duration}}</p>	  </ion-item>	</ion-list>	<ion-fab right bottom>    <button (click)="goToAddTravel()" color="danger" ion-fab><ion-icon  name="add" ></ion-icon></button>  </ion-fab></ion-content></div>'
     var COMPONENTS = [{'name': 'Connexion', 'selector': 'page-connexion'},{'name': 'MyApp', 'selector': ''},{'name': 'Register', 'selector': 'page-register'},{'name': 'TabsPage', 'selector': ''},{'name': 'TravelAdd', 'selector': 'page-travel-add'},{'name': 'TravelList', 'selector': 'page-travel-list'},{'name': 'UserEditPage', 'selector': 'page-user-edit'},{'name': 'UserPage', 'selector': 'page-user'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TravelList'};
